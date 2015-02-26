@@ -24,7 +24,7 @@ public class ArraysKvadrat
      *  @return String ki predstavlja to tabelo
      *  @since 7
      *  
-     *  ref: http://developer.classpath.org/doc/java/util/Arrays-source.html
+     *  ref: http://developer.classpath.org/doc/java/util/Arrays-source.html in http://www.docjar.com/html/api/java/util/Arrays.java.html
      */  
     public static String toString(int[][] ar){
          
