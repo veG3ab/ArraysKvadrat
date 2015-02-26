@@ -17,6 +17,7 @@ public class ArraysKvadrat
       private ArraysKvadrat(){
       }
     
+      
     /**
      *  Vrne besedilno interpretacijo tabele, podane z argumentom. Če argument ni tabela ali
      *  ni dvorazsežna 'kvadratna' tabela, mora vrniti 'null'.
@@ -35,7 +36,23 @@ public class ArraysKvadrat
         return ss;
     }
     
-    
+    /**
+     *  Vrne besedilno interpretacijo tabele, podane z argumentom. Če argument ni tabela ali
+     *  ni dvorazsežna 'kvadratna' tabela, mora vrniti 'null'.
+     *  @param ar tabela, ki jo skušamo predstaviti
+     *  @return String ki predstavlja to tabelo
+     *  @since 7
+     *  
+     *  ref: http://developer.classpath.org/doc/java/util/Arrays-source.html in http://www.docjar.com/html/api/java/util/Arrays.java.html
+     */  
+    public static String toString(char[][] ar){
+         
+        String ss="[ ";
+        for(int i=0;i<ar.length;i++)
+          ss += (i==0)? Arrays.toString(ar[i]):" , "+ Arrays.toString(ar[i]);
+        ss+=" ]";
+        return ss;
+    }
 }
 
 
