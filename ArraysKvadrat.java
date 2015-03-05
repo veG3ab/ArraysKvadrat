@@ -112,8 +112,19 @@ public class ArraysKvadrat {
 
 		for(int x=fromIndexX; x<toIndexX;x++)
 			for(int y=fromIndexY;y<toIndexY && y<a[x].length;y++)	// prevarjanje dolzine vsake vrstice	
-				a[x][y]=val;
+			a[x][y]=val;
 	}
+	
+	//Primerjava dveh vrstic
+	
+	public static boolean equals(int[][] t1, int[][] t2) {
+		boolean b = true;
+		for(int i = 0; i<t1.length; i++)
+			b=b&&Arrays.equals(t1[i],t2[i]);
+			
+	}
+		
+	
 }
 
 
