@@ -4,7 +4,7 @@ Utility class with methods to operate on arrays (sized NxN)
 
 # Razdelitev nalog
  - Osnovne
-  - jovi    - fill random 
+  - jovi    - fill z nakjljucnimi vrednostmi iz podanega ranga 
   - savelli - equals   		- dodali bi še npr. ali ima tabela t1 enako vrstico Z kot tabela t2 vrstico K, stolpci
   - MaticML - sort 			- sort izbrane vrstice
   - Bobby 	- binarySearch 	- na izbrani vrstici, na izbranem stolpcu, na celotni tabeli po posameznih vrsticah
