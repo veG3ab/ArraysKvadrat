@@ -205,8 +205,8 @@ public class ArraysKvadrat {
 	 * @return tabelo podane velikost
 	 */
 	
-	public static long int[][] copyOf(long int t[][], int velikost){
-		long int[][] tn = new long int[velikost][velikost];
+	public static long[][] copyOf(long t[][], int velikost){
+		long[][] tn = new long[velikost][velikost];
 		for(int i=0;i<velikost;i++)
 			for(int j=0;j<velikost;j++)
 				tn[i][j] = t[i][j];
