@@ -122,6 +122,24 @@ public class ArraysKvadrat {
 		
 		return tn;
 	}
+	
+	public static double[][] copyOf(double t[][], int velikost){
+		double[][] tn = new double[velikost][velikost];
+		for(int i=0;i<velikost;i++)
+			for(int j=0;j<velikost;j++)
+				tn[i][j] = t[i][j];
+		
+		return tn;
+	}
+	
+	public static char[][] copyOf(char t[][], int velikost){
+		char[][] tn = new char[velikost][velikost];
+		for(int i=0;i<velikost;i++)
+			for(int j=0;j<velikost;j++)
+				tn[i][j] = t[i][j];
+		
+		return tn;
+	}
 }
 
 
