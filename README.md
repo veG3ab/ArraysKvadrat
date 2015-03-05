@@ -9,7 +9,7 @@ Utility class with methods to operate on arrays (sized NxN)
   - jovi fill from-to 	(za char in long)
   - savelli - equals   		- dodali bi še npr. ali ima tabela t1 enako vrstico Z kot tabela t2 vrstico K, stolpci
   -  sort 			- sort izbrane vrstice
-  -  binarySearch 	- na izbrani vrstici, na izbranem stolpcu, na celotni tabeli po posameznih vrsticah
+  -  Bobby - binarySearch 	- na izbrani vrstici, na izbranem stolpcu, na celotni tabeli po posameznih vrsticah
   -  static int prestejVrednost(int[][] a, int vrednost);
   
 -  Potapljanje ladic
