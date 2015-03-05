@@ -114,6 +114,12 @@ public class ArraysKvadrat {
 			for(int y=fromIndexY;y<toIndexY && y<a[x].length;y++)	// prevarjanje dolzine vsake vrstice	
 				a[x][y]=val;
 	}
+	/**
+	 * Vzame zgornji levi del podane tabele in jo ga shrani v novo tabelo podane velikosti, vrne to tabelo
+	 * @param tabela, velikost
+	 * @return tabelo podane velikost
+	 */
+	 
 	public static int[][] copyOf(int t[][], int velikost){
 		int[][] tn = new int[velikost][velikost];
 		for(int i=0;i<velikost;i++)
@@ -123,8 +129,8 @@ public class ArraysKvadrat {
 		return tn;
 	}
 	
-	public static double[][] copyOf(double t[][], int velikost){
-		double[][] tn = new double[velikost][velikost];
+	public static long int[][] copyOf(long int t[][], int velikost){
+		long int[][] tn = new long int[velikost][velikost];
 		for(int i=0;i<velikost;i++)
 			for(int j=0;j<velikost;j++)
 				tn[i][j] = t[i][j];
