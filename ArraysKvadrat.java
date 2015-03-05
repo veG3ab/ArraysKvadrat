@@ -88,6 +88,20 @@ public class ArraysKvadrat {
 	}
 
 	/**
+	 *	Izpise tabelo ar tipa int v kvadratni obliki
+	 */
+
+	public static void print(int [][] ar) {
+		for(int x=0;x<ar.length;x++) {
+			System.out.print("[");
+			for(int y=0;y<ar.length;y++) {
+				System.out.printf("%2d ",ar[x][y]);
+			}
+			System.out.println("]");
+		}
+	}
+
+	/**
 	 *	Napolne 'kvadratno' dvorazsezno tabelo a z vrednostmi val tipa int
 	 *  @param tabela a, vrednost val
 	 *  @since 7
