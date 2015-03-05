@@ -88,12 +88,32 @@ public class ArraysKvadrat {
 	}
 
 	/**
-	 *	Napolne 'kvadratno' dvorazsezno tabelo a z vrednostmi val
+	 *	Napolne 'kvadratno' dvorazsezno tabelo a z vrednostmi val tipa int
 	 *  @param tabela a, vrednost val
 	 *  @since 7
 	 *   	
 	 */
 	public static void fill(int[][] a, int val) {
+		fill(a,0,0,a.length,a[0].length,val);
+	}
+	
+	/**
+	 *	Napolne 'kvadratno' dvorazsezno tabelo a z vrednostmi val tipa char
+	 *  @param tabela a, vrednost val
+	 *  @since 7
+	 *   	
+	 */
+	public static void fill(char[][] a, char val) {
+		fill(a,0,0,a.length,a[0].length,val);
+	}
+	
+	/**
+	 *	Napolne 'kvadratno' dvorazsezno tabelo a z vrednostmi val tipa long
+	 *  @param tabela a, vrednost val
+	 *  @since 7
+	 *   	
+	 */
+	public static void fill(long[][] a, long val) {
 		fill(a,0,0,a.length,a[0].length,val);
 	}
 
@@ -114,6 +134,42 @@ public class ArraysKvadrat {
 			for(int y=fromIndexY;y<toIndexY && y<a[x].length;y++)	// prevarjanje dolzine vsake vrstice	
 				a[x][y]=val;
 	}
+	/**
+	 *	Napolne 'kvadratno' dvorazsezno tabelo a z vrednostmi val (tipa char) v kvadratu omjenemu z stririmi koordinatami
+	 *  @param tabela a, koordinate, vrednost val
+	 *  @since 7
+	 */
+	public static void fill(char[][] a, int fromIndexX, int fromIndexY, int toIndexX, int toIndexY, char val) {
+		if(fromIndexX<0)
+			fromIndexX=0;
+		if(fromIndexY<0)
+			fromIndexY=0;
+		if(toIndexX>a.length)
+			toIndexX=a.length;
+
+		for(int x=fromIndexX; x<toIndexX;x++)
+			for(int y=fromIndexY;y<toIndexY && y<a[x].length;y++)	// prevarjanje dolzine vsake vrstice	
+				a[x][y]=val;
+	}
+	
+	/**
+	 *	Napolne 'kvadratno' dvorazsezno tabelo a z vrednostmi val(tipa long) v kvadratu omjenemu z stririmi koordinatami
+	 *  @param tabela a, koordinate, vrednost val
+	 *  @since 7
+	 */
+	public static void fill(long[][] a, int fromIndexX, int fromIndexY, int toIndexX, int toIndexY, long val) {
+		if(fromIndexX<0)
+			fromIndexX=0;
+		if(fromIndexY<0)
+			fromIndexY=0;
+		if(toIndexX>a.length)
+			toIndexX=a.length;
+
+		for(int x=fromIndexX; x<toIndexX;x++)
+			for(int y=fromIndexY;y<toIndexY && y<a[x].length;y++)	// prevarjanje dolzine vsake vrstice	
+				a[x][y]=val;
+	}
+	
 	public static int[][] copyOf(int t[][], int velikost){
 		int[][] tn = new int[velikost][velikost];
 		for(int i=0;i<velikost;i++)
