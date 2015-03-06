@@ -1,5 +1,5 @@
 ArraysKvadrat
--------------
+=============
 
 Utility class with methods to operate on arrays (sized NxN)
 
@@ -30,7 +30,7 @@ Utility class with methods to operate on arrays (sized NxN)
   - **ziga** `int prestejVrednost(int[][] a, int vrednost);`  - Koliko vrednosti 'vrednost' se nahaja v tabeli 'a'?
   - **patrik** `bool obstajaVrednost(int[][] a, int vrednost);` - Ali v tabeli 'a' obstaja vsaj en element z vrednostjo 'vrednost'?
   - **trobec** `void napolniSosede(int[][] a, int indeksX, int indeksY, int vrednost);`   - Napolni vse sosede elementa (indeksX,indeksY) z vrednostjo 'vrednost'
-  - **trobec** `void napolniSosede(int[][] a, int indeksX, int indeksY);`  - Napolni vse sosede elementa (indeksX,indeksY) z vrednostjo elementa (upprabi kar prejsnjo metodo)
+  - **trobec** `void napolniSosede(int[][] a, int indeksX, int indeksY);`  - Napolni vse sosede elementa (indeksX,indeksY) z vrednostjo elementa (uporabi kar prejsnjo metodo)
   - **habjanic** `bool primerjajVrednost(int[][] a, int indeksX, int indeksY,int vrednost);`  - Preveri, če je vrednost danega elementa enaka 'vrednost'
   - **vercek** `void napolni20procNaklRazmejeno(int[][] a, int vrednost);` - Napolni 20% elementov tabele 'a' z vrednostmi 'vrednost'. Pri teh so elementi izbrani naključno, in se med seboj ne smejo dotikati (element ne sme imeti soseda z isto vrednostjo
 
