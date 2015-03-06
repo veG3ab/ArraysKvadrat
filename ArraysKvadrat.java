@@ -103,7 +103,7 @@ public class ArraysKvadrat {
 
 	/**
 	 *	Napolne 'kvadratno' dvorazsezno tabelo a z vrednostmi val tipa int
-	 *  @param tabela a, vrednost val
+	 *  @param a podana tabela, val vrednost
 	 *  @since 7
 	 *   	
 	 */
@@ -113,7 +113,7 @@ public class ArraysKvadrat {
 	
 	/**
 	 *	Napolne 'kvadratno' dvorazsezno tabelo a z vrednostmi val tipa char
-	 *  @param tabela a, vrednost val
+	 *  @param a podana tabela, val vrednost
 	 *  @since 7
 	 *   	
 	 */
@@ -123,7 +123,7 @@ public class ArraysKvadrat {
 	
 	/**
 	 *	Napolne 'kvadratno' dvorazsezno tabelo a z vrednostmi val tipa long
-	 *  @param tabela a, vrednost val
+	 *  @param a podana tabela, val vrednost
 	 *  @since 7
 	 *   	
 	 */
@@ -133,7 +133,7 @@ public class ArraysKvadrat {
 
 	/**
 	 *	Napolne 'kvadratno' dvorazsezno tabelo a z vrednostmi val v kvadratu omjenemu z stririmi koordinatami
-	 *  @param tabela a, koordinate, vrednost val
+	 *  @param a podana tabela, fromIndexX, fromIndexY, toIndexX, toIndexY - koordinate ogljisc kvadrata, val vrednost
 	 *  @since 7
 	 */
 	public static void fill(int[][] a, int fromIndexX, int fromIndexY, int toIndexX, int toIndexY, int val) {
@@ -150,7 +150,7 @@ public class ArraysKvadrat {
 	}
 	/**
 	 *	Napolne 'kvadratno' dvorazsezno tabelo a z vrednostmi val (tipa char) v kvadratu omjenemu z stririmi koordinatami
-	 *  @param tabela a, koordinate, vrednost val
+	 *  @param a podana tabela, fromIndexX, fromIndexY, toIndexX, toIndexY - koordinate ogljisc kvadrata , val vrednost
 	 *  @since 7
 	 */
 	public static void fill(char[][] a, int fromIndexX, int fromIndexY, int toIndexX, int toIndexY, char val) {
@@ -168,7 +168,7 @@ public class ArraysKvadrat {
 	
 	/**
 	 *	Napolne 'kvadratno' dvorazsezno tabelo a z vrednostmi val(tipa long) v kvadratu omjenemu z stririmi koordinatami
-	 *  @param tabela a, koordinate, vrednost val
+	 *  @param a podana tabela, fromIndexX, fromIndexY, toIndexX, toIndexY - koordinate ki omejujejo kvadrat, val vrednost
 	 *  @since 7
 	 */
 	public static void fill(long[][] a, int fromIndexX, int fromIndexY, int toIndexX, int toIndexY, long val) {
@@ -186,8 +186,8 @@ public class ArraysKvadrat {
 	
 	/**
 	 * Vzame zgornji levi del podane tabele in jo ga shrani v novo tabelo podane velikosti, vrne to tabelo
-	 * @param tabela, velikost
-	 * @return tabelo podane velikost
+	 * @param t tabela, velikost
+	 * @return tabela podane velikost
 	 */
 	 
 	public static int[][] copyOf(int t[][], int velikost){
@@ -201,8 +201,8 @@ public class ArraysKvadrat {
 
 	/**
 	 * Vzame zgornji levi del podane tabele in jo ga shrani v novo tabelo podane velikosti, vrne to tabelo
-	 * @param tabela, velikost
-	 * @return tabelo podane velikost
+	 * @param t tabela, velikost
+	 * @return tabela podane velikost
 	 */
 	
 	public static long[][] copyOf(long t[][], int velikost){
@@ -216,8 +216,9 @@ public class ArraysKvadrat {
 
 	/**
 	 * Vzame zgornji levi del podane tabele in jo ga shrani v novo tabelo podane velikosti, vrne to tabelo
-	 * @param tabela, velikost
-	 * @return tabelo podane velikost
+	 * @param t tabela
+	 * @param velikost 
+	 * @return tabela podane velikost
 	 */
 	
 	public static char[][] copyOf(char t[][], int velikost){
