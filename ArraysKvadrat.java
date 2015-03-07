@@ -13,7 +13,7 @@ import java.util.Arrays;
 public class ArraysKvadrat {
 	
 	// zagotovimo, da se ne da narediti objekta iz tega; privzeti konstruktor je privaten
-	public ArraysKvadrat() {
+	private ArraysKvadrat() {
 	}
 	  
 	/**
