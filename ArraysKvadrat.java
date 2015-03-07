@@ -146,6 +146,17 @@ public class ArraysKvadrat {
 		
 		return tn;
 	}
+	
+	public static void napolni20procNaklRazmejeno(int[][] a, int vrednost){
+		int ponov = a.length * a[0].length;
+		ponov = (int)(velikost/5);
+		int x, y;
+		while(0<ponov){
+			x = (int)(Math.random()*(a.length-1));
+			y = (int)(Math.random()*(a[0].length-1));
+			for()
+		}
+	}
 }
 
 
