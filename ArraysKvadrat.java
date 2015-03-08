@@ -147,14 +147,47 @@ public class ArraysKvadrat {
 		return tn;
 	}
 	
+	/**
+	 * Napolni 20% tabele z vrednostjo. Ne napolni sosednjih si mest.
+	 * @param tabela in vrednost
+	 */
+	
 	public static void napolni20procNaklRazmejeno(int[][] a, int vrednost){
 		int ponov = a.length * a[0].length;
-		ponov = (int)(velikost/5);
+		ponov = (int)(ponov/5);
 		int x, y;
+		boolean isti;
 		while(0<ponov){
-			x = (int)(Math.random()*(a.length-1));
-			y = (int)(Math.random()*(a[0].length-1));
-			for()
+			x = (int)(Math.random()*(a.length));
+			y = (int)(Math.random()*(a[0].length));
+			
+			int yz = y - 1;
+			if(y==0)
+				yz=y;
+				
+			int ys = y + 1;
+			if(y==a[0].length-1)
+				ys=y;
+				
+			int xz = x - 1;
+			if(x==0)
+				xz=x;
+				
+			int xs = x + 1;
+			if(x==a.length-1)
+				xs=x;
+			isti = false;	
+			for(int i=yz;i<=ys;i++)
+				for(int j=xz;j<=xs;j++)
+					if(a[j][i]==vrednost){
+						isti = true;
+						break;
+					}
+			if(isti==false){
+				a[x][y]=vrednost;
+				ponov--;
+			}
+				
 		}
 	}
 }
