@@ -89,9 +89,7 @@ public class ArraysKvadrat {
 
 	/**
 	 *	Izpise tabelo ar tipa int v kvadratni obliki
-	 *	@param ar - izpisovana tabele
-	 *	@since 7
-	*/
+	 */
 
 	public static void print(int [][] ar) {
 		for(int x=0;x<ar.length;x++) {
@@ -100,80 +98,6 @@ public class ArraysKvadrat {
 				System.out.printf("%2d ",ar[x][y]);
 			}
 			System.out.println("]");
-		}
-	}
-	
-	/**
-	 *	Izpise tabelo ar tipa long v kvadratni obliki
-	 *	@param ar - izpisovana tabele
-	 *	@since 7
-	 */
-
-	public static void print(long [][] ar) {
-		for(int x=0;x<ar.length;x++) {
-			System.out.print("[");
-			for(int y=0;y<ar.length;y++) {
-				System.out.printf("%4d ",ar[x][y]);
-			}
-			System.out.println("]");
-		}
-	}
-	
-	/**
-	 *	Izpise tabelo ar tipa char v kvadratni obliki
-	 *	@param ar - izpisovana tabele
-	 *	@since 7
-	 */
-
-	public static void print(char [][] ar) {
-		for(int x=0;x<ar.length;x++) {
-			System.out.print("[");
-			for(int y=0;y<ar.length;y++) {
-				System.out.printf("%c ",ar[x][y]);
-			}
-			System.out.println("]");
-		}
-	}
-	
-	/**
-	 * 	napolni tabelo t z vrednostmi z intervala [min,max)
-	 *	@param tabela t, min,max
-	 *	@since 7
-	 */
-	
-	public static void fillRandom(int [][]t, int min, int max) {
-		for(int y=0;t.length>y;y++){
-			for(int x=0;t[y].length>x ;x++){
-				t[y][x] = (int)(Math.random()*(max-min))+min; 	
-			}	
-		}
-	}
-	
-	/**
-	 * 	napolni tabelo t z vrednostmi z intervala [min,max)
-	 *	@param tabela t, min,max
-	 *	@since 7
-	 */
-	
-	public static void fillRandom(char [][]t, char min, char max) {
-		for(int y=0;t.length>y;y++){
-			for(int x=0;t[y].length>x ;x++){
-				t[y][x] = (char)(Math.random()*(max-min)+min); 	
-			}	
-		}
-	}
-	
-	/**
-	 * 	napolni tabelo t z vrednostmi z intervala [min,max)
-	 *	@param tabela t, min,max
-	 *	@since 7
-	 */
-
-	public static void fillRandom(long [][]t, long min, long max) {
-		for(int y=0;t.length>y;y++){
-			for(int x=0;t[y].length>x ;x++){
-				t[y][x] = (long)(Math.random()*(max-min))+min; 	
-			}	
 		}
 	}
 
@@ -304,6 +228,79 @@ public class ArraysKvadrat {
 				tn[i][j] = t[i][j];
 		
 		return tn;
+	}
+	
+	/**
+	 * Napolni 20% tabele z vrednostjo. Ne napolni sosednjih mest.
+	 * @param tabela in vrednost
+	 */
+	
+	public static void napolni20procNaklRazmejeno(int[][] a, int vrednost){
+
+		int ponov = a.length * a[0].length;
+		ponov = (int)(ponov/5);
+		int ponov2 = ponov;
+		int x, y;
+		boolean isti=false;
+		boolean nezasicenost=true;
+		int [][] polnost = new int[a.length][a[0].length];
+
+		for(;;){
+			for(int i=0;i<a[0].length;i++)
+					for(int j=0;j<a.length;j++){
+						a[j][i]=0;
+						polnost[j][i]=0;
+					}
+			ponov = ponov2;
+			nezasicenost = true;
+
+			while((0<ponov)&&nezasicenost){
+				x = (int)(Math.random()*(a.length));
+				y = (int)(Math.random()*(a[0].length));
+
+				int yz = y - 1;
+				if(y==0)
+					yz=y;
+					
+				int ys = y + 1;
+				if(y==a[0].length-1)
+					ys=y;
+					
+				int xz = x - 1;
+				if(x==0)
+					xz=x;
+					
+				int xs = x + 1;
+				if(x==a.length-1)
+					xs=x;
+
+				isti = false;	
+				for(int i=yz;i<=ys;i++)
+					for(int j=xz;j<=xs;j++){
+						polnost[j][i] += 1;
+						if(a[j][i]==vrednost)
+							isti = true;
+					}
+
+				if(isti==false){
+					a[x][y]=vrednost;
+					ponov--;
+				} else{
+					for(int i=yz;i<=ys;i++)
+						for(int j=xz;j<=xs;j++)
+							polnost[j][i] -= 1;
+				}
+
+				nezasicenost = false;
+				for(int i=0;i<a[0].length;i++)
+					for(int j=0;j<a.length;j++)
+						if(polnost[j][i]==0)
+							nezasicenost = true;
+			}
+
+			if(ponov==0)
+				break;
+		}
 	}
 }
 
