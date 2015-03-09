@@ -100,6 +100,14 @@ public class ArraysKvadrat {
 			System.out.println("]");
 		}
 	}
+	
+	public static void random(int [][]t, int min, int max) {
+		for(int y=0;t.length>y;y++){
+			for(int x=0;t[x].length>x ;x++){
+			t[y][x] = (int)(Math.random()*max)+min; 	
+			}	
+		}
+	}
 
 	/**
 	 *	Napolne 'kvadratno' dvorazsezno tabelo a z vrednostmi val tipa int
