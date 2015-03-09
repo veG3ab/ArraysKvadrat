@@ -89,7 +89,9 @@ public class ArraysKvadrat {
 
 	/**
 	 *	Izpise tabelo ar tipa int v kvadratni obliki
-	 */
+	 *	@param ar - izpisovana tabele
+	 *	@since 7
+	*/
 
 	public static void print(int [][] ar) {
 		for(int x=0;x<ar.length;x++) {
@@ -101,10 +103,76 @@ public class ArraysKvadrat {
 		}
 	}
 	
-	public static void random(int [][]t, int min, int max) {
+	/**
+	 *	Izpise tabelo ar tipa long v kvadratni obliki
+	 *	@param ar - izpisovana tabele
+	 *	@since 7
+	 */
+
+	public static void print(long [][] ar) {
+		for(int x=0;x<ar.length;x++) {
+			System.out.print("[");
+			for(int y=0;y<ar.length;y++) {
+				System.out.printf("%4d ",ar[x][y]);
+			}
+			System.out.println("]");
+		}
+	}
+	
+	/**
+	 *	Izpise tabelo ar tipa char v kvadratni obliki
+	 *	@param ar - izpisovana tabele
+	 *	@since 7
+	 */
+
+	public static void print(char [][] ar) {
+		for(int x=0;x<ar.length;x++) {
+			System.out.print("[");
+			for(int y=0;y<ar.length;y++) {
+				System.out.printf("%c ",ar[x][y]);
+			}
+			System.out.println("]");
+		}
+	}
+	
+	/**
+	 * 	napolni tabelo t z vrednostmi z intervala [min,max)
+	 *	@param tabela t, min,max
+	 *	@since 7
+	 */
+	
+	public static void fillRandom(int [][]t, int min, int max) {
 		for(int y=0;t.length>y;y++){
-			for(int x=0;t[x].length>x ;x++){
-			t[y][x] = (int)(Math.random()*max)+min; 	
+			for(int x=0;t[y].length>x ;x++){
+				t[y][x] = (int)(Math.random()*(max-min))+min; 	
+			}	
+		}
+	}
+	
+	/**
+	 * 	napolni tabelo t z vrednostmi z intervala [min,max)
+	 *	@param tabela t, min,max
+	 *	@since 7
+	 */
+	
+	public static void fillRandom(char [][]t, char min, char max) {
+		for(int y=0;t.length>y;y++){
+			for(int x=0;t[y].length>x ;x++){
+				t[y][x] = (char)(Math.random()*(max-min)+min); 	
+			}	
+		}
+	}
+	
+	/**
+	 * 	napolni tabelo t z vrednostmi z intervala [min,max)
+	 *	@param tabela t, min,max
+	 *	@since 7
+	 */
+
+	public static void fillRandom(long [][]t, long min, long max) {
+		for(int y=0;t.length>y;y++){
+			for(int x=0;t[y].length>x ;x++){
+				t[y][x] = (long)(Math.random()*(max-min))+min; 	
 			}	
 		}
 	}
