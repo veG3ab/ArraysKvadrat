@@ -16,6 +16,8 @@ Utility class with methods to operate on arrays (sized NxN)
     - `@params` , ki pove, katere pomenijo podani parametri
     - ce metoda vraca vrednost: `@return`, ki pove, kaj je vraca
     - `@since`, ki se nanasa na verzijjo jave, za katero je metoda napisana. To naj bo vedno 7
+    - `@author`, doda avtorja, če se ta hoče identificirati
+    - `@version`, doda verzijo, npr. 1.0
   - primer lahko vidite v ArraysKavdrat.java (toString metoda)
 
 # Razdelitev nalog
