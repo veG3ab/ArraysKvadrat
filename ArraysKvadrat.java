@@ -229,6 +229,16 @@ public class ArraysKvadrat {
 		
 		return tn;
 	}
+	public static int prestejVrednost(int[][]a, int vrednost){
+	int steviloVrednosti;
+	for(int s=0;s<a.length;s++){  //s=stolpec
+		for(int v=0;v<a.length;v++){ //v=vrstica
+			if(vrednost==a[v][s])
+				steviloVrednosti++;
+		}
+	}
+	return steviloVrednsti;
+}
 }
 
 
