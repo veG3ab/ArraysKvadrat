@@ -22,7 +22,6 @@ Utility class with methods to operate on arrays (sized NxN)
 
 # Razdelitev nalog
 ## Osnovne
-  - **savelli** - `equals(int [][]t1, int z1, int [][]t2, int z2)` - ali ima tabela t1 enako vrstico z1 kot tabela t2 vrstico z1, isto s stolpci
   - **MaticML** - `sort(int [][]a, int z)` - sort izbrane vrstice z v tabeli a
   - **Bobby** 	- `binarySearch(int [][]a, int s)` 	- na izbrani vrstici, na izbranem stolpcu, na celotni tabeli po posameznih vrsticah
     
