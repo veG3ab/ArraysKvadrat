@@ -102,6 +102,33 @@ public class ArraysKvadrat {
 	}
 
 	/**
+	 *	Izpise tabelo ar tipa char v kvadratni obliki
+	 */
+
+	public static void print(char [][] ar) {
+		for(int x=0;x<ar.length;x++) {
+			System.out.print("[");
+			for(int y=0;y<ar.length;y++) {
+				System.out.printf("%c ",ar[x][y]);
+			}
+			System.out.println("]");
+		}
+	}
+	/**
+	 *	Izpise tabelo ar tipa long v kvadratni obliki
+	 */
+
+	public static void print(long [][] ar) {
+		for(int x=0;x<ar.length;x++) {
+			System.out.print("[");
+			for(int y=0;y<ar.length;y++) {
+				System.out.printf("%2d ",ar[x][y]);
+			}
+			System.out.println("]");
+		}
+	}
+
+	/**
 	 *	Napolne 'kvadratno' dvorazsezno tabelo a z vrednostmi val tipa int
 	 *  @param a podana tabela, val vrednost
 	 *  @since 7
