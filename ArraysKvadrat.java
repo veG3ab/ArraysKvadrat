@@ -494,6 +494,25 @@ public class ArraysKvadrat {
 		else
 			return false;
 	}
+	
+	/**
+	 * Postavi vrednost na dano koordinato, če lahkoPostavimNa to dovoli
+	 */
+	
+	void postaviNa(int[][] a, int indeksX, int indeksY, int vrednost){
+		if(lahkoPostavimNa(a, indeksX, indeksY)==true)
+			a[indeksX][indeksY] = vrednost;
+	}
+	
+	void postaviNa(char[][] a, int indeksX, int indeksY, char vrednost){
+		if(lahkoPostavimNa(a, indeksX, indeksY)==true)
+			a[indeksX][indeksY] = vrednost;
+	}
+	
+	void postaviNa(long[][] a, int indeksX, int indeksY, long vrednost){
+		if(lahkoPostavimNa(a, indeksX, indeksY)==true)
+			a[indeksX][indeksY] = vrednost;
+	}
 }
 
 
