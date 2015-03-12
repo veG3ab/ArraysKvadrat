@@ -513,6 +513,54 @@ public class ArraysKvadrat {
 		if(lahkoPostavimNa(a, indeksX, indeksY)==true)
 			a[indeksX][indeksY] = vrednost;
 	}
+	
+	/**
+	 * V podani tabeli opravi binarno iskanje po izbrani vrstici in vrne mesto iskane vrednosti
+	 * @param a podana  tabela vrednosti
+	 * @param s iskana vrednost
+	 * @param v podana vrstica
+	 * @return mesto iskane vrednosti
+	 */
+	public static int binarySearch(int [][]a, int v, int s){
+		int sMeja = 0;
+		int kje = 0;
+		int zMeja = a.length-1;
+		while (sMeja <= zMeja) {
+			int mesto = (sMeja+zMeja) /2; 
+			if (s>a[v][mesto]){
+				sMeja = mesto +1;
+			} else if (s<a[v][mesto]){
+				zMeja = mesto - 1;
+			} else { 
+				kje = mesto; 
+			}
+		}
+		return kje;
+	}
+		
+	 /**
+	 * V podani tabeli opravi binarno iskanje po izbranem stolpcu in vrne mesto iskane vrednosti
+	 * @param a podana  tabela vrednosti
+	 * @param s iskana vrednost
+	 * @param st podan stolpec
+	 * @return mesto iskane vrednosti
+	 */
+	public static int binarySearch(int [][]a, int st, int s){
+		int sMeja = 0;
+		int kje = 0;
+		int zMeja = a.length-1;
+		while (sMeja <= zMeja) {
+			int mesto = (sMeja+zMeja) /2; 
+			if (s>a[mesto][st]){
+				sMeja = mesto +1;
+			} else if (s<a[mesto][st]){
+				zMeja = mesto - 1;
+			} else { 
+				kje = mesto; 
+			}
+		}
+		return kje;
+	}
 }
 
 
