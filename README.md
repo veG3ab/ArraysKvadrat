@@ -44,12 +44,12 @@ Utility class with methods to operate on arrays (sized NxN)
   - **Markovič** `boolean aliJeDelZapNDesneD(int[][] a, int indX, int indY, int n);` Ugotovi, ali je element, podan s koordinato, del zaporedja enakih elementov dolžine vsaj n v desni diagonali tabele 'a’ (leva: od levo zgoraj, do desno spodaj
 
 ## Sudoku
-  - *'Polnost' je v naslednji nalogi opredeljena kot: element dolžine N vsebuje vse vrednosti od 1..N. Začetna vrednost pri tabelah z elementi tipa char je 'a' oz 'A'. Metode so definirane zgolj za celoštevilske tipa in char.*
-  - **Nitazi** `boolean vrsticaPolna(int[][] a, int indV);` Ali je stolpec indS poln?
-  - **emir1122** `boolean stolpecPoln(int[][] a, int indS);` Ali je leva diagonala tabele polna?
-  - **Sustersic** `boolean diagLevaPolna(int[][] a);` Ali je desna diagonala polna?
-  - **Kosir** `boolean diagDesnaPolna(int[][] a);` Ali je kvadrat z izhodiščem v (indX,indY) razsežnosti nXn poln ?
-  - **Weiss** `boolean kvadratNxNpoln(int[][] a, int indX, int indY, int n);` Ali vrstica s številko indV polna?
+  - *'Polnost' je v naslednji nalogi opredeljena kot: element dolžine N vsebuje vse vrednosti od 1..N. Začetna vrednost pri tabelah z elementi tipa char je 'a' oz 'A'. Metode so definirane zgolj za celoštevilske tipa in char.* 
+  - **Nitazi** `boolean vrsticaPolna(int[][] a, int indV);` Ali vrstica s številko indV polna?
+  - **emir1122** `boolean stolpecPoln(int[][] a, int indS);` Ali je stolpec indS poln?
+  - **Sustersic** `boolean diagLevaPolna(int[][] a);` Ali je leva diagonala tabele polna?
+  - **Kosir** `boolean diagDesnaPolna(int[][] a);` Ali je desna diagonala polna?
+  - **Weiss** `boolean kvadratNxNpoln(int[][] a, int indX, int indY, int n);` Ali je kvadrat z izhodiščem v (indX,indY) razsežnosti nXn poln ?
 
 # Pripombe
   - `napolni20procNaklRazmejeno` deluje in je zanesliva (se ne more zaciklati), vendar je na velikih tabelah (50x50) pocasna. 
