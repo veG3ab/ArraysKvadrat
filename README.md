@@ -39,18 +39,18 @@ Utility class with methods to operate on arrays (sized NxN)
   - *Naloge predpostavljajo pojem praznosti; prazen= če je 0, znak s kodo 32(presledek), oz je vrednost, ki je manjša od |10-8|, odvisno od tipa elementov tabele*
   - **vercek** `boolean lahkoPostavimNa(int[][] a, int indeksX, int indeksY);` Ugotovi, ali lahko zapišemo vrednostna dano korrdinato? Postavljamo lahko, če je 'prazna'.
   - **jovi** `void postaviNa(int[][] a, int indeksX, int indeksY, int vrednost);` Postavi vrednost na dano koordinato, če lahkoPostavimNa to dovoli
-  - `boolean aliJihJeNvVrstici(int[][] a, int indeksX, int indeksY, int n, int vrednost);` Ugotovi, če je elementov z dano vrednostjo v vrstici, dani s koordinato vsaj n
-  - `boolean aliJihJeNvStolpcu(int[][] a, int indeksX, int indeksY, int n, int vrednost);` Ugotovi, če je elementov z dano vrednostjo v stolpcu, danem s koordinato vsaj n
-  - `boolean aliJeDelZapNVrstice(int[][] a, int indX, int indY, int n);` Ugotovi, ali je element, podan s koordinato, del zaporedja enakih elementov dolžine vsaj n v vrstici elementa
-  - `boolean aliJeDelZapNStolpca(int[][] a, int indX, int indY, int n);` Ugotovi, ali je element, podan s koordinato, del zaporedja enakih elementov dolžine vsaj n v stolpcu elementa
-  - `boolean aliJeDelZapNLeveD(int[][] a, int indX, int indY, int n);` Ugotovi, ali je element, podan s koordinato, del zaporedja enakih elementov dolžine vsaj n v levi diagonali tabele 'a’ (leva: od levo zgoraj, do desno spodaj
-  - `boolean aliJeDelZapNDesneD(int[][] a, int indX, int indY, int n);` Ugotovi, ali je element, podan s koordinato, del zaporedja enakih elementov dolžine vsaj n v desni diagonali tabele 'a’ (leva: od levo zgoraj, do desno spodaj
+  - **simkeeeee** `boolean aliJihJeNvVrstici(int[][] a, int indeksX, int indeksY, int n, int vrednost);` Ugotovi, če je elementov z dano vrednostjo v vrstici, dani s koordinato vsaj n
+  - **MonkeyNooldle** `boolean aliJihJeNvStolpcu(int[][] a, int indeksX, int indeksY, int n, int vrednost);` Ugotovi, če je elementov z dano vrednostjo v stolpcu, danem s koordinato vsaj n
+  - **JureKomac** `boolean aliJeDelZapNVrstice(int[][] a, int indX, int indY, int n);` Ugotovi, ali je element, podan s koordinato, del zaporedja enakih elementov dolžine vsaj n v vrstici elementa
+  - **Rous** `boolean aliJeDelZapNStolpca(int[][] a, int indX, int indY, int n);` Ugotovi, ali je element, podan s koordinato, del zaporedja enakih elementov dolžine vsaj n v stolpcu elementa
+  - **Martinovič** `boolean aliJeDelZapNLeveD(int[][] a, int indX, int indY, int n);` Ugotovi, ali je element, podan s koordinato, del zaporedja enakih elementov dolžine vsaj n v levi diagonali tabele 'a’ (leva: od levo zgoraj, do desno spodaj
+  - **Markovič** `boolean aliJeDelZapNDesneD(int[][] a, int indX, int indY, int n);` Ugotovi, ali je element, podan s koordinato, del zaporedja enakih elementov dolžine vsaj n v desni diagonali tabele 'a’ (leva: od levo zgoraj, do desno spodaj
 
 ## Sudoku
   - *'Polnost' je v naslednji nalogi opredeljena kot: element dolžine N vsebuje vse vrednosti od 1..N. Začetna vrednost pri tabelah z elementi tipa char je 'a' oz 'A'. Metode so definirane zgolj za celoštevilske tipa in char.*
-  - `boolean vrsticaPolna(int[][] a, int indV);` Ali je stolpec indS poln?
-  - `boolean stolpecPoln(int[][] a, int indS);` Ali je leva diagonala tabele polna?
-  - `boolean diagLevaPolna(int[][] a);` Ali je desna diagonala polna?
-  - `boolean diagDesnaPolna(int[][] a);` Ali je kvadrat z izhodiščem v (indX,indY) razsežnosti nXn poln ?
-  - `boolean kvadratNxNpoln(int[][] a, int indX, int indY, int n);` Ali vrstica s številko indV polna?
+  - **Nitazi** `boolean vrsticaPolna(int[][] a, int indV);` Ali je stolpec indS poln?
+  - **emir1122** `boolean stolpecPoln(int[][] a, int indS);` Ali je leva diagonala tabele polna?
+  - **Sustersic** `boolean diagLevaPolna(int[][] a);` Ali je desna diagonala polna?
+  - **Kosir** `boolean diagDesnaPolna(int[][] a);` Ali je kvadrat z izhodiščem v (indX,indY) razsežnosti nXn poln ?
+  - **Weiss** `boolean kvadratNxNpoln(int[][] a, int indX, int indY, int n);` Ali vrstica s številko indV polna?
 
