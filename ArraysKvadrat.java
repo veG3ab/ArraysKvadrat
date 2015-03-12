@@ -13,7 +13,7 @@ import java.util.Arrays;
 public class ArraysKvadrat {
 	
 	// zagotovimo, da se ne da narediti objekta iz tega; privzeti konstruktor je privaten
-	public ArraysKvadrat() {
+	private ArraysKvadrat() {
 	}
 	  
 	/**
@@ -100,18 +100,37 @@ public class ArraysKvadrat {
 			System.out.println("]");
 		}
 	}
-	
-	public static void random(int [][]t, int min, int max) {
-		for(int y=0;t.length>y;y++){
-			for(int x=0;t[x].length>x ;x++){
-			t[y][x] = (int)(Math.random()*max)+min; 	
-			}	
+
+	/**
+	 *	Izpise tabelo ar tipa char v kvadratni obliki
+	 */
+
+	public static void print(char [][] ar) {
+		for(int x=0;x<ar.length;x++) {
+			System.out.print("[");
+			for(int y=0;y<ar.length;y++) {
+				System.out.printf("%c ",ar[x][y]);
+			}
+			System.out.println("]");
+		}
+	}
+	/**
+	 *	Izpise tabelo ar tipa long v kvadratni obliki
+	 */
+
+	public static void print(long [][] ar) {
+		for(int x=0;x<ar.length;x++) {
+			System.out.print("[");
+			for(int y=0;y<ar.length;y++) {
+				System.out.printf("%2d ",ar[x][y]);
+			}
+			System.out.println("]");
 		}
 	}
 
 	/**
 	 *	Napolne 'kvadratno' dvorazsezno tabelo a z vrednostmi val tipa int
-	 *  @param tabela a, vrednost val
+	 *  @param a podana tabela, val vrednost
 	 *  @since 7
 	 *   	
 	 */
@@ -121,7 +140,7 @@ public class ArraysKvadrat {
 	
 	/**
 	 *	Napolne 'kvadratno' dvorazsezno tabelo a z vrednostmi val tipa char
-	 *  @param tabela a, vrednost val
+	 *  @param a podana tabela, val vrednost
 	 *  @since 7
 	 *   	
 	 */
@@ -131,7 +150,7 @@ public class ArraysKvadrat {
 	
 	/**
 	 *	Napolne 'kvadratno' dvorazsezno tabelo a z vrednostmi val tipa long
-	 *  @param tabela a, vrednost val
+	 *  @param a podana tabela, val vrednost
 	 *  @since 7
 	 *   	
 	 */
@@ -141,7 +160,7 @@ public class ArraysKvadrat {
 
 	/**
 	 *	Napolne 'kvadratno' dvorazsezno tabelo a z vrednostmi val v kvadratu omjenemu z stririmi koordinatami
-	 *  @param tabela a, koordinate, vrednost val
+	 *  @param a podana tabela, fromIndexX, fromIndexY, toIndexX, toIndexY - koordinate ogljisc kvadrata, val vrednost
 	 *  @since 7
 	 */
 	public static void fill(int[][] a, int fromIndexX, int fromIndexY, int toIndexX, int toIndexY, int val) {
@@ -158,7 +177,7 @@ public class ArraysKvadrat {
 	}
 	/**
 	 *	Napolne 'kvadratno' dvorazsezno tabelo a z vrednostmi val (tipa char) v kvadratu omjenemu z stririmi koordinatami
-	 *  @param tabela a, koordinate, vrednost val
+	 *  @param a podana tabela, fromIndexX, fromIndexY, toIndexX, toIndexY - koordinate ogljisc kvadrata , val vrednost
 	 *  @since 7
 	 */
 	public static void fill(char[][] a, int fromIndexX, int fromIndexY, int toIndexX, int toIndexY, char val) {
@@ -176,7 +195,7 @@ public class ArraysKvadrat {
 	
 	/**
 	 *	Napolne 'kvadratno' dvorazsezno tabelo a z vrednostmi val(tipa long) v kvadratu omjenemu z stririmi koordinatami
-	 *  @param tabela a, koordinate, vrednost val
+	 *  @param a podana tabela, fromIndexX, fromIndexY, toIndexX, toIndexY - koordinate ki omejujejo kvadrat, val vrednost
 	 *  @since 7
 	 */
 	public static void fill(long[][] a, int fromIndexX, int fromIndexY, int toIndexX, int toIndexY, long val) {
@@ -194,8 +213,8 @@ public class ArraysKvadrat {
 	
 	/**
 	 * Vzame zgornji levi del podane tabele in jo ga shrani v novo tabelo podane velikosti, vrne to tabelo
-	 * @param tabela, velikost
-	 * @return tabelo podane velikost
+	 * @param t tabela, velikost
+	 * @return tabela podane velikost
 	 */
 	 
 	public static int[][] copyOf(int t[][], int velikost){
@@ -209,12 +228,12 @@ public class ArraysKvadrat {
 
 	/**
 	 * Vzame zgornji levi del podane tabele in jo ga shrani v novo tabelo podane velikosti, vrne to tabelo
-	 * @param tabela, velikost
-	 * @return tabelo podane velikost
+	 * @param t tabela, velikost
+	 * @return tabela podane velikost
 	 */
 	
-	public static long int[][] copyOf(long int t[][], int velikost){
-		long int[][] tn = new long int[velikost][velikost];
+	public static long[][] copyOf(long t[][], int velikost){
+		long[][] tn = new long[velikost][velikost];
 		for(int i=0;i<velikost;i++)
 			for(int j=0;j<velikost;j++)
 				tn[i][j] = t[i][j];
@@ -224,8 +243,9 @@ public class ArraysKvadrat {
 
 	/**
 	 * Vzame zgornji levi del podane tabele in jo ga shrani v novo tabelo podane velikosti, vrne to tabelo
-	 * @param tabela, velikost
-	 * @return tabelo podane velikost
+	 * @param t tabela
+	 * @param velikost 
+	 * @return tabela podane velikost
 	 */
 	
 	public static char[][] copyOf(char t[][], int velikost){
@@ -235,6 +255,244 @@ public class ArraysKvadrat {
 				tn[i][j] = t[i][j];
 		
 		return tn;
+	}
+	
+	/**
+	 * Napolni 20% tabele z vrednostjo. Ne napolni sosednjih mest.
+	 * @param tabela in vrednost
+	 */
+	
+	public static void napolni20procNaklRazmejeno(int[][] a, int vrednost){
+
+		int ponov = a.length * a[0].length;
+		ponov = (int)(ponov/5);
+		int ponov2 = ponov;
+		int x, y;
+		boolean isti=false;
+		boolean nezasicenost=true;
+		int [][] polnost = new int[a.length][a[0].length];
+
+		for(;;){
+			for(int i=0;i<a[0].length;i++)
+					for(int j=0;j<a.length;j++){
+						a[j][i]=0;
+						polnost[j][i]=0;
+					}
+			ponov = ponov2;
+			nezasicenost = true;
+
+			while((0<ponov)&&nezasicenost){
+				x = (int)(Math.random()*(a.length));
+				y = (int)(Math.random()*(a[0].length));
+
+				int yz = y - 1;
+				if(y==0)
+					yz=y;
+					
+				int ys = y + 1;
+				if(y==a[0].length-1)
+					ys=y;
+					
+				int xz = x - 1;
+				if(x==0)
+					xz=x;
+					
+				int xs = x + 1;
+				if(x==a.length-1)
+					xs=x;
+
+				isti = false;	
+				for(int i=yz;i<=ys;i++)
+					for(int j=xz;j<=xs;j++){
+						polnost[j][i] += 1;
+						if(a[j][i]==vrednost)
+							isti = true;
+					}
+
+				if(isti==false){
+					a[x][y]=vrednost;
+					ponov--;
+				} else{
+					for(int i=yz;i<=ys;i++)
+						for(int j=xz;j<=xs;j++)
+							polnost[j][i] -= 1;
+				}
+
+				nezasicenost = false;
+				for(int i=0;i<a[0].length;i++)
+					for(int j=0;j<a.length;j++)
+						if(polnost[j][i]==0)
+							nezasicenost = true;
+			}
+
+			if(ponov==0)
+				break;
+		}
+	}
+	
+	public static void napolni20procNaklRazmejeno(char[][] a, char vrednost){
+
+		int ponov = a.length * a[0].length;
+		ponov = (int)(ponov/5);
+		int ponov2 = ponov;
+		int x, y;
+		boolean isti=false;
+		boolean nezasicenost=true;
+		int [][] polnost = new int[a.length][a[0].length];
+
+		for(;;){
+			for(int i=0;i<a[0].length;i++)
+					for(int j=0;j<a.length;j++){
+						a[j][i]=0;
+						polnost[j][i]=0;
+					}
+			ponov = ponov2;
+			nezasicenost = true;
+
+			while((0<ponov)&&nezasicenost){
+				x = (int)(Math.random()*(a.length));
+				y = (int)(Math.random()*(a[0].length));
+
+				int yz = y - 1;
+				if(y==0)
+					yz=y;
+					
+				int ys = y + 1;
+				if(y==a[0].length-1)
+					ys=y;
+					
+				int xz = x - 1;
+				if(x==0)
+					xz=x;
+					
+				int xs = x + 1;
+				if(x==a.length-1)
+					xs=x;
+
+				isti = false;	
+				for(int i=yz;i<=ys;i++)
+					for(int j=xz;j<=xs;j++){
+						polnost[j][i] += 1;
+						if(a[j][i]==vrednost)
+							isti = true;
+					}
+
+				if(isti==false){
+					a[x][y]=vrednost;
+					ponov--;
+				} else{
+					for(int i=yz;i<=ys;i++)
+						for(int j=xz;j<=xs;j++)
+							polnost[j][i] -= 1;
+				}
+
+				nezasicenost = false;
+				for(int i=0;i<a[0].length;i++)
+					for(int j=0;j<a.length;j++)
+						if(polnost[j][i]==0)
+							nezasicenost = true;
+			}
+
+			if(ponov==0)
+				break;
+		}
+	}
+	
+	public static void napolni20procNaklRazmejeno(long[][] a, long vrednost){
+
+		int ponov = a.length * a[0].length;
+		ponov = (int)(ponov/5);
+		int ponov2 = ponov;
+		int x, y;
+		boolean isti=false;
+		boolean nezasicenost=true;
+		int [][] polnost = new int[a.length][a[0].length];
+
+		for(;;){
+			for(int i=0;i<a[0].length;i++)
+					for(int j=0;j<a.length;j++){
+						a[j][i]=0;
+						polnost[j][i]=0;
+					}
+			ponov = ponov2;
+			nezasicenost = true;
+
+			while((0<ponov)&&nezasicenost){
+				x = (int)(Math.random()*(a.length));
+				y = (int)(Math.random()*(a[0].length));
+
+				int yz = y - 1;
+				if(y==0)
+					yz=y;
+					
+				int ys = y + 1;
+				if(y==a[0].length-1)
+					ys=y;
+					
+				int xz = x - 1;
+				if(x==0)
+					xz=x;
+					
+				int xs = x + 1;
+				if(x==a.length-1)
+					xs=x;
+
+				isti = false;	
+				for(int i=yz;i<=ys;i++)
+					for(int j=xz;j<=xs;j++){
+						polnost[j][i] += 1;
+						if(a[j][i]==vrednost)
+							isti = true;
+					}
+
+				if(isti==false){
+					a[x][y]=vrednost;
+					ponov--;
+				} else{
+					for(int i=yz;i<=ys;i++)
+						for(int j=xz;j<=xs;j++)
+							polnost[j][i] -= 1;
+				}
+
+				nezasicenost = false;
+				for(int i=0;i<a[0].length;i++)
+					for(int j=0;j<a.length;j++)
+						if(polnost[j][i]==0)
+							nezasicenost = true;
+			}
+
+			if(ponov==0)
+				break;
+		}
+	}
+	
+	/**
+	 * metoda preveri praznost na podanem mestu
+	 * @param tabela, x in y koordinate
+	 * @return true/false
+	 */
+	 
+	static boolean lahkoPostavimNa(int[][] a, int x, int y){
+		if(a[x][y]==0)
+			return true;
+		else
+			return false;
+	}
+	
+	static boolean lahkoPostavimNa(char[][] a, int x, int y){
+		if(a[x][y]==0)
+			return true;
+		else if(a[x][y]==32)
+			return true;
+		else
+			return false;
+	}
+	
+	static boolean lahkoPostavimNa(long[][] a, int x, int y){
+		if(a[x][y]==0)
+			return true;
+		else
+			return false;
 	}
 }
 
