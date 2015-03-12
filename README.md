@@ -39,6 +39,7 @@ Utility class with methods to operate on arrays (sized NxN)
   - *Naloge predpostavljajo pojem praznosti; prazen= če je 0, znak s kodo 32(presledek), oz je vrednost, ki je manjša od |10-8|, odvisno od tipa elementov tabele*
   - **vercek** `boolean lahkoPostavimNa(int[][] a, int indeksX, int indeksY);` Ugotovi, ali lahko zapišemo vrednostna dano korrdinato? Postavljamo lahko, če je 'prazna'.
   - **jovi** `void postaviNa(int[][] a, int indeksX, int indeksY, int vrednost);` Postavi vrednost na dano koordinato, če lahkoPostavimNa to dovoli
+<hr>
   - **simkeeeee** `boolean aliJihJeNvVrstici(int[][] a, int indeksX, int indeksY, int n, int vrednost);` Ugotovi, če je elementov z dano vrednostjo v vrstici, dani s koordinato vsaj n
   - **MonkeyNooldle** `boolean aliJihJeNvStolpcu(int[][] a, int indeksX, int indeksY, int n, int vrednost);` Ugotovi, če je elementov z dano vrednostjo v stolpcu, danem s koordinato vsaj n
   - **JureKomac** `boolean aliJeDelZapNVrstice(int[][] a, int indX, int indY, int n);` Ugotovi, ali je element, podan s koordinato, del zaporedja enakih elementov dolžine vsaj n v vrstici elementa
