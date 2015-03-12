@@ -438,6 +438,35 @@ public class ArraysKvadrat {
 				break;
 		}
 	}
+	
+	/**
+	 * metoda preveri praznost na podanem mestu
+	 * @param tabela, x in y koordinate
+	 * @return true/false
+	 */
+	 
+	static boolean lahkoPostavimNa(int[][] a, int x, int y){
+		if(a[x][y]==0)
+			return true;
+		else
+			return false;
+	}
+	
+	static boolean lahkoPostavimNa(char[][] a, int x, int y){
+		if(a[x][y]==0)
+			return true;
+		else if(a[x][y]==32)
+			return true;
+		else
+			return false;
+	}
+	
+	static boolean lahkoPostavimNa(long[][] a, int x, int y){
+		if(a[x][y]==0)
+			return true;
+		else
+			return false;
+	}
 }
 
 
