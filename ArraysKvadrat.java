@@ -114,6 +114,7 @@ public class ArraysKvadrat {
 			System.out.println("]");
 		}
 	}
+
 	/**
 	 *	Izpise tabelo ar tipa long v kvadratni obliki
 	 */
@@ -330,6 +331,11 @@ public class ArraysKvadrat {
 		}
 	}
 	
+	/**
+	 * Napolni 20% tabele z vrednostjo. Ne napolni sosednjih mest.
+	 * @param tabela in vrednost
+	 */
+	
 	public static void napolni20procNaklRazmejeno(char[][] a, char vrednost){
 
 		int ponov = a.length * a[0].length;
@@ -397,6 +403,11 @@ public class ArraysKvadrat {
 				break;
 		}
 	}
+	
+	/**
+	 * Napolni 20% tabele z vrednostjo. Ne napolni sosednjih mest.
+	 * @param tabela in vrednost
+	 */
 	
 	public static void napolni20procNaklRazmejeno(long[][] a, long vrednost){
 
@@ -472,14 +483,20 @@ public class ArraysKvadrat {
 	 * @return true/false
 	 */
 	 
-	static boolean lahkoPostavimNa(int[][] a, int x, int y){
+	public static boolean lahkoPostavimNa(int[][] a, int x, int y){
 		if(a[x][y]==0)
 			return true;
 		else
 			return false;
 	}
 	
-	static boolean lahkoPostavimNa(char[][] a, int x, int y){
+	/**
+	 * metoda preveri praznost na podanem mestu
+	 * @param tabela, x in y koordinate
+	 * @return true/false
+	 */
+	
+	public static boolean lahkoPostavimNa(char[][] a, int x, int y){
 		if(a[x][y]==0)
 			return true;
 		else if(a[x][y]==32)
@@ -488,7 +505,13 @@ public class ArraysKvadrat {
 			return false;
 	}
 	
-	static boolean lahkoPostavimNa(long[][] a, int x, int y){
+	/**
+	 * metoda preveri praznost na podanem mestu
+	 * @param tabela, x in y koordinate
+	 * @return true/false
+	 */
+	
+	public static boolean lahkoPostavimNa(long[][] a, int x, int y){
 		if(a[x][y]==0)
 			return true;
 		else
@@ -497,68 +520,105 @@ public class ArraysKvadrat {
 	
 	/**
 	 * Postavi vrednost na dano koordinato, če lahkoPostavimNa to dovoli
+	 * @param tabela a, v katero vstavljamo
+	 * @param indeksX in indeksY, pozicija katero postavljamo
+	 * @param vrednost
+	 * @since 7
 	 */
 	
-	void postaviNa(int[][] a, int indeksX, int indeksY, int vrednost){
-		if(lahkoPostavimNa(a, indeksX, indeksY)==true)
-			a[indeksX][indeksY] = vrednost;
-	}
-	
-	void postaviNa(char[][] a, int indeksX, int indeksY, char vrednost){
-		if(lahkoPostavimNa(a, indeksX, indeksY)==true)
-			a[indeksX][indeksY] = vrednost;
-	}
-	
-	void postaviNa(long[][] a, int indeksX, int indeksY, long vrednost){
+	public static void postaviNa(int[][] a, int indeksX, int indeksY, int vrednost){
 		if(lahkoPostavimNa(a, indeksX, indeksY)==true)
 			a[indeksX][indeksY] = vrednost;
 	}
 	
 	/**
-	 * V podani tabeli opravi binarno iskanje po izbrani vrstici in vrne mesto iskane vrednosti
+	 * Postavi vrednost na dano koordinato, če lahkoPostavimNa to dovoli
+	 * @param tabela a, v katero vstavljamo
+	 * @param indeksX in indeksY, pozicija katero postavljamo
+	 * @param vrednost
+	 * @since 7
+	 */
+	
+	public static void postaviNa(char[][] a, int indeksX, int indeksY, char vrednost){
+		if(lahkoPostavimNa(a, indeksX, indeksY)==true)
+			a[indeksX][indeksY] = vrednost;
+	}
+	
+	/**
+	 * Postavi vrednost na dano koordinato, če lahkoPostavimNa to dovoli
+	 * @param tabela a, v katero vstavljamo
+	 * @param indeksX in indeksY, pozicija katero postavljamo
+	 * @param vrednost
+	 * @since 7
+	 */
+
+	public static void postaviNa(long[][] a, int indeksX, int indeksY, long vrednost){
+		if(lahkoPostavimNa(a, indeksX, indeksY)==true)
+			a[indeksX][indeksY] = vrednost;
+	}
+	
+	/**
+	 * V podani tabeli opravi binarno iskanje po izbrani vrstici in vrne mesto iskane vrednosti. Ce je vrednosti vec, vrne pozicijo prve
 	 * @param a podana  tabela vrednosti
 	 * @param s iskana vrednost
 	 * @param v podana vrstica
 	 * @return mesto iskane vrednosti
 	 */
-	public static int binarySearch(int [][]a, int v, int s){
-		int sMeja = 0;
-		int kje = 0;
-		int zMeja = a.length-1;
-		while (sMeja <= zMeja) {
+
+	public static int binarySearchVrstica(int [][]a, int v, int s){
+		int sMeja = 0;	// vkljucno
+		int zMeja = a.length; // izkljucno
+		int kje = -1;	
+
+		while (sMeja + 1< zMeja) {
 			int mesto = (sMeja+zMeja) /2; 
-			if (s>a[v][mesto]){
-				sMeja = mesto +1;
-			} else if (s<a[v][mesto]){
-				zMeja = mesto - 1;
-			} else { 
-				kje = mesto; 
+			if (s<a[v][mesto]){
+				zMeja = mesto;
+			} else {
+				sMeja = mesto ;
+			} 
+			if (a[v][sMeja]==s) { 
+				kje = sMeja; 
 			}
 		}
+
+		// da je vrednost prva
+		while(kje>0 && a[v][kje]==s)
+			kje--;
+		kje++;
+
 		return kje;
 	}
 		
 	 /**
-	 * V podani tabeli opravi binarno iskanje po izbranem stolpcu in vrne mesto iskane vrednosti
+	 * V podani tabeli opravi binarno iskanje po izbranem stolpcu in vrne mesto iskane vrednosti. Ce je vrednosti vec, vrne pozicijo prve
 	 * @param a podana  tabela vrednosti
 	 * @param s iskana vrednost
 	 * @param st podan stolpec
 	 * @return mesto iskane vrednosti
 	 */
-	public static int binarySearch(int [][]a, int st, int s){
-		int sMeja = 0;
-		int kje = 0;
-		int zMeja = a.length-1;
-		while (sMeja <= zMeja) {
+	public static int binarySearchStolpec(int [][]a, int st, int s){
+		int sMeja = 0;	// vkljucno
+		int zMeja = a.length; // izkljucno
+		int kje = -1;	
+
+		while (sMeja + 1< zMeja) {
 			int mesto = (sMeja+zMeja) /2; 
-			if (s>a[mesto][st]){
-				sMeja = mesto +1;
-			} else if (s<a[mesto][st]){
-				zMeja = mesto - 1;
-			} else { 
-				kje = mesto; 
+			if (s<a[mesto][st]){
+				zMeja = mesto;
+			} else {
+				sMeja = mesto ;
+			} 
+			if (a[sMeja][st]==s) { 
+				kje = sMeja; 
 			}
 		}
+
+		// da je vrednost prva
+		while(kje>0 && a[kje][st]==s)
+			kje--;
+		kje++;
+
 		return kje;
 	}
 }

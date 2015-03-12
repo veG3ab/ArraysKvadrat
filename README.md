@@ -21,7 +21,7 @@ Utility class with methods to operate on arrays (sized NxN)
   - primer lahko vidite v ArraysKavdrat.java (toString metoda)
 
 # Razdelitev nalog
-##Osnovne
+## Osnovne
   - **savelli** - `equals(int [][]t1, int z1, int [][]t2, int z2)` - ali ima tabela t1 enako vrstico z1 kot tabela t2 vrstico z1, isto s stolpci
   - **MaticML** - `sort(int [][]a, int z)` - sort izbrane vrstice z v tabeli a
   - **Bobby** 	- `binarySearch(int [][]a, int s)` 	- na izbrani vrstici, na izbranem stolpcu, na celotni tabeli po posameznih vrsticah
@@ -33,13 +33,12 @@ Utility class with methods to operate on arrays (sized NxN)
   - **trobec** `void napolniSosede(int[][] a, int indeksX, int indeksY, int vrednost);`   - Napolni vse sosede elementa (indeksX,indeksY) z vrednostjo 'vrednost'
   - **trobec** `void napolniSosede(int[][] a, int indeksX, int indeksY);`  - Napolni vse sosede elementa (indeksX,indeksY) z vrednostjo elementa (uporabi kar prejsnjo metodo)
   - **habjanic** `bool primerjajVrednost(int[][] a, int indeksX, int indeksY,int vrednost);`  - Preveri, če je vrednost danega elementa enaka 'vrednost'
-  - **vercek** `void napolni20procNaklRazmejeno(int[][] a, int vrednost);` - Napolni 20% elementov tabele 'a' z vrednostmi 'vrednost'. Pri teh so elementi izbrani naključno, in se med seboj ne smejo dotikati (element ne sme imeti soseda z isto vrednostjo
 
 ## Krizci in krozci
   - *Naloge predpostavljajo pojem praznosti; prazen= če je 0, znak s kodo 32(presledek), oz je vrednost, ki je manjša od |10-8|, odvisno od tipa elementov tabele*
   - **vercek** `boolean lahkoPostavimNa(int[][] a, int indeksX, int indeksY);` Ugotovi, ali lahko zapišemo vrednostna dano korrdinato? Postavljamo lahko, če je 'prazna'.
   - **jovi** `void postaviNa(int[][] a, int indeksX, int indeksY, int vrednost);` Postavi vrednost na dano koordinato, če lahkoPostavimNa to dovoli
-<hr>
+-----------------------------------------------------------------------------------
   - **simkeeeee** `boolean aliJihJeNvVrstici(int[][] a, int indeksX, int indeksY, int n, int vrednost);` Ugotovi, če je elementov z dano vrednostjo v vrstici, dani s koordinato vsaj n
   - **MonkeyNooldle** `boolean aliJihJeNvStolpcu(int[][] a, int indeksX, int indeksY, int n, int vrednost);` Ugotovi, če je elementov z dano vrednostjo v stolpcu, danem s koordinato vsaj n
   - **JureKomac** `boolean aliJeDelZapNVrstice(int[][] a, int indX, int indY, int n);` Ugotovi, ali je element, podan s koordinato, del zaporedja enakih elementov dolžine vsaj n v vrstici elementa
@@ -55,3 +54,5 @@ Utility class with methods to operate on arrays (sized NxN)
   - **Kosir** `boolean diagDesnaPolna(int[][] a);` Ali je kvadrat z izhodiščem v (indX,indY) razsežnosti nXn poln ?
   - **Weiss** `boolean kvadratNxNpoln(int[][] a, int indX, int indY, int n);` Ali vrstica s številko indV polna?
 
+# Pripombe
+  - `napolni20procNaklRazmejeno` deluje in je zanesliva (se ne more zaciklati), vendar je na velikih tabelah (50x50) pocasna. 
