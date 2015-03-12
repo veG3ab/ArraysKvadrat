@@ -174,8 +174,9 @@ public class ArraysKvadrat {
 
 		for(int x=fromIndexX; x<toIndexX;x++)
 			for(int y=fromIndexY;y<toIndexY && y<a[x].length;y++)	// prevarjanje dolzine vsake vrstice	
-				a[x][y]=val;
+			a[x][y]=val;
 	}
+
 	/**
 	 *	Napolne 'kvadratno' dvorazsezno tabelo a z vrednostmi val (tipa char) v kvadratu omjenemu z stririmi koordinatami
 	 *  @param a podana tabela, fromIndexX, fromIndexY, toIndexX, toIndexY - koordinate ogljisc kvadrata , val vrednost
@@ -620,6 +621,68 @@ public class ArraysKvadrat {
 		kje++;
 
 		return kje;
+	}
+	
+	/**
+	 * Primerjava dveh vrstic
+	 */	
+
+	public static boolean equalsVrstica(int[][] t1, int v1, int[][] t2, int v2) {
+		if(t1[v1].length != t2[v2].length)
+			return false;
+
+		boolean b = true;
+		for(int i = 0; i<t1[v1].length && b; i++)
+			b=b && t1[v1][i]==t2[v2][i];
+
+		return b;			
+	}
+	
+	
+	/**
+	 * Primerjava dveh vrstic
+	 */	
+
+	public static boolean equalsVrstica(char[][] t1, int v1, char[][] t2, int v2) {
+		if(t1[v1].length != t2[v2].length)
+			return false;
+
+		boolean b = true;
+		for(int i = 0; i<t1[v1].length && b; i++)
+			b=b && t1[v1][i]==t2[v2][i];
+
+		return b;			
+	}
+	
+	
+	/**
+	 * Primerjava dveh vrstic
+	 */	
+
+	public static boolean equalsVrstica(long[][] t1, int v1, long[][] t2, int v2) {
+		if(t1[v1].length != t2[v2].length)
+			return false;
+
+		boolean b = true;
+		for(int i = 0; i<t1[v1].length && b; i++)
+			b=b && t1[v1][i]==t2[v2][i];
+
+		return b;			
+	}
+
+	/**
+	 * Primerjava dveh stolpcev
+	 */	
+
+	public static boolean equalsStolpec(int[][] t1, int s1, int[][] t2, int s2) {
+		if(t1.length != t2.length)
+			return false;
+
+		boolean b = true;
+		for(int i = 0; i<t1.length && b; i++)
+			b=b && t1[i][s1]==t2[i][s2];
+
+		return b;			
 	}
 }
 
