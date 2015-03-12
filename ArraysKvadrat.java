@@ -302,6 +302,142 @@ public class ArraysKvadrat {
 				break;
 		}
 	}
+	
+	public static void napolni20procNaklRazmejeno(char[][] a, char vrednost){
+
+		int ponov = a.length * a[0].length;
+		ponov = (int)(ponov/5);
+		int ponov2 = ponov;
+		int x, y;
+		boolean isti=false;
+		boolean nezasicenost=true;
+		int [][] polnost = new int[a.length][a[0].length];
+
+		for(;;){
+			for(int i=0;i<a[0].length;i++)
+					for(int j=0;j<a.length;j++){
+						a[j][i]=0;
+						polnost[j][i]=0;
+					}
+			ponov = ponov2;
+			nezasicenost = true;
+
+			while((0<ponov)&&nezasicenost){
+				x = (int)(Math.random()*(a.length));
+				y = (int)(Math.random()*(a[0].length));
+
+				int yz = y - 1;
+				if(y==0)
+					yz=y;
+					
+				int ys = y + 1;
+				if(y==a[0].length-1)
+					ys=y;
+					
+				int xz = x - 1;
+				if(x==0)
+					xz=x;
+					
+				int xs = x + 1;
+				if(x==a.length-1)
+					xs=x;
+
+				isti = false;	
+				for(int i=yz;i<=ys;i++)
+					for(int j=xz;j<=xs;j++){
+						polnost[j][i] += 1;
+						if(a[j][i]==vrednost)
+							isti = true;
+					}
+
+				if(isti==false){
+					a[x][y]=vrednost;
+					ponov--;
+				} else{
+					for(int i=yz;i<=ys;i++)
+						for(int j=xz;j<=xs;j++)
+							polnost[j][i] -= 1;
+				}
+
+				nezasicenost = false;
+				for(int i=0;i<a[0].length;i++)
+					for(int j=0;j<a.length;j++)
+						if(polnost[j][i]==0)
+							nezasicenost = true;
+			}
+
+			if(ponov==0)
+				break;
+		}
+	}
+	
+	public static void napolni20procNaklRazmejeno(long[][] a, long vrednost){
+
+		int ponov = a.length * a[0].length;
+		ponov = (int)(ponov/5);
+		int ponov2 = ponov;
+		int x, y;
+		boolean isti=false;
+		boolean nezasicenost=true;
+		int [][] polnost = new int[a.length][a[0].length];
+
+		for(;;){
+			for(int i=0;i<a[0].length;i++)
+					for(int j=0;j<a.length;j++){
+						a[j][i]=0;
+						polnost[j][i]=0;
+					}
+			ponov = ponov2;
+			nezasicenost = true;
+
+			while((0<ponov)&&nezasicenost){
+				x = (int)(Math.random()*(a.length));
+				y = (int)(Math.random()*(a[0].length));
+
+				int yz = y - 1;
+				if(y==0)
+					yz=y;
+					
+				int ys = y + 1;
+				if(y==a[0].length-1)
+					ys=y;
+					
+				int xz = x - 1;
+				if(x==0)
+					xz=x;
+					
+				int xs = x + 1;
+				if(x==a.length-1)
+					xs=x;
+
+				isti = false;	
+				for(int i=yz;i<=ys;i++)
+					for(int j=xz;j<=xs;j++){
+						polnost[j][i] += 1;
+						if(a[j][i]==vrednost)
+							isti = true;
+					}
+
+				if(isti==false){
+					a[x][y]=vrednost;
+					ponov--;
+				} else{
+					for(int i=yz;i<=ys;i++)
+						for(int j=xz;j<=xs;j++)
+							polnost[j][i] -= 1;
+				}
+
+				nezasicenost = false;
+				for(int i=0;i<a[0].length;i++)
+					for(int j=0;j<a.length;j++)
+						if(polnost[j][i]==0)
+							nezasicenost = true;
+			}
+
+			if(ponov==0)
+				break;
+		}
+	}
 }
 
 
