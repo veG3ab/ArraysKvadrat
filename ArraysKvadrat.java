@@ -684,6 +684,15 @@ public class ArraysKvadrat {
 
 		return b;			
 	}
+	public static int stVrednosti prestejVrednost(int[][]a, int vrednost){
+		int stVrednosti;
+		for(int s=0;s<a.length;s++){
+			for(int i=0;i<a(s).length){
+				if(a[i]==vrednost)
+					stVrednosti++;
+			}
+		}
+	}
 }
 
 
