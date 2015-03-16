@@ -330,6 +330,18 @@ public class ArraysKvadrat {
 		}
 	}
 	
+	boolean aliJihJeNvStolpcu(int[][] a, int indeksX, int indeksY, int n, int vrednost){
+           
+        for(int i=0;i<=2;i++)
+            if(a[indeksX][i]!=vrednost){
+             
+                return false;
+               }
+               
+               return true;
+        
+        }
+	
 	public static void napolni20procNaklRazmejeno(char[][] a, char vrednost){
 
 		int ponov = a.length * a[0].length;
