@@ -494,7 +494,19 @@ public class ArraysKvadrat {
 		else
 			return false;
 	}
+
+	boolean diagDesnaPolna(int[][] a){
+		int y = a.length -1;
+		for(int x = 0; x< a.length;x++){
+			if(a[x][y] <= 0)
+				return false;
+		y--;
+		}
+		
+		return true;
+	}
 }
+
 
 
 
