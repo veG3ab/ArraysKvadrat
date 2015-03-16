@@ -1,3 +1,5 @@
+**Pull request bo sprejet samo, če bo koda pred oddajo pregledana, stestirana in prevedena.**
+
 ArraysKvadrat
 =============
 
@@ -52,3 +54,7 @@ Utility class with methods to operate on arrays (sized NxN)
 
 # Pripombe
   - `napolni20procNaklRazmejeno` deluje in je zanesliva (se ne more zaciklati), vendar je na velikih tabelah (50x50) pocasna. 
+  
+# Opombe
+
+Za nekatere dijake iz G3A je zmanjkalo nalog. Ti so Klemen, Lovro, Dominik in Rijavec. Od teh se pričakuje, da bodo kodo, ki jo bodo spisali zgoraj navedeni dijaki **poskušali** optimizirati in izboljšati.
