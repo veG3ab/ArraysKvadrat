@@ -258,6 +258,25 @@ public class ArraysKvadrat {
 				// prevarjanje dolzine vsake vrstice
 				a[x][y] = val;
 	}
+	
+	/**
+	 * Pregleda tabelo 'a',če v njej obstaja element z vrednostjo 'vrednost'
+	 * vrača boolean vrednost ali.
+	 */
+   
+    public static boolean obstajaVrednost(int [][] a, int vrednost){
+        boolean ali= false;
+        for(int i=0;i<a.length;i++){
+            for(int j=0;j<a[i].length;j++){
+                if(vrednost==a[i][j]){
+                    ali=true;
+                }
+            }
+        }
+        return ali;
+    }
+	
+
 
 	/**
 	 * Vzame zgornji levi del podane tabele in jo ga shrani v novo tabelo podane
