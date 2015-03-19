@@ -817,17 +817,74 @@ public class ArraysKvadrat {
 		return b;
 	}
 	
+	/**
+	 * preveri, ali je leva diagonala dolzine N vsebuje vse vrednosti od 1..N
+	 * @params a
+	 * 			tabela, ki jo preverjamo
+	 */
+	
 	static boolean diagLevaPolna(int [][]a){
         int []stevila=new int [a.length];
-        for(int i=0,x=0,y=0;i<a.length;i++){
-            stevila[(a[i][i])-1]=1;
-        }
         for(int i=0;i<a.length;i++){
+            if(a[i][i]<a.length && a[i][i]>0) {
+				stevila[(a[i][i])-1]++;
+			}
+		}
+        
+		for(int i=0;i<a.length;i++){
             if(stevila[i]!=1){
-                return false;}
+                return false;
+			}
         }
-        return true;
+        
+		return true;
     }
 	
+	/**
+	 * preveri, ali je leva diagonala dolzine N vsebuje vse vrednosti od 1..N
+	 * @params a
+	 * 			tabela, ki jo preverjamo
+	 */
+	
+	static boolean diagLevaPolna(char [][]a){
+        int []crke=new int [a.length];
+        for(int i=0;i<a.length;i++){
+			int c = (int) (a[i][i].toUpperCase()) - 64;
+			if(c<a.length && c>0) {
+				crke[c-1]++;
+			}
+		}
+        
+		for(int i=0;i<a.length;i++){
+            if(crke[i]!=1){
+                return false;
+			}
+        }
+        
+		return true;
+    }
+	
+	/**
+	 * preveri, ali je leva diagonala dolzine N vsebuje vse vrednosti od 1..N
+	 * @params a
+	 * 			tabela, ki jo preverjamo
+	 */
+	
+	static boolean diagLevaPolna(long [][]a){
+        int []stevila=new int [a.length];
+        for(int i=0;i<a.length;i++){
+            if(a[i][i]<a.length && a[i][i]>0) {
+				stevila[(a[i][i])-1]++;
+			}
+		}
+        
+		for(int i=0;i<a.length;i++){
+            if(stevila[i]!=1){
+                return false;
+			}
+        }
+        
+		return true;
+    }
 	
 }
