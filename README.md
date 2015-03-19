@@ -11,7 +11,7 @@ Utility class with methods to operate on arrays (sized NxN)
     - ga spreminjajte
     - posljite pull request (da vase spremembe dodamo v skupni repo)
   - Metode naj bodo splosne
-  - Naj bodo 'fool proof' (naj ne vracajo napak, tudi ce so podatki neustrezni)
+  - Naj bodo 'fool proof' (naj ne rvacajo napak, tudi ce so podatki neustrezni)
   - Narejene naj bodo za int,char in long (vsako posebaj) 
   - Vse metode naj imajo pred sabo komentar, v katerem je:
     - Razlaga, kaj metoda pocne
@@ -30,7 +30,6 @@ Utility class with methods to operate on arrays (sized NxN)
 ## Potapljanje ladic
   - *Sosed elementa: so vsi elementi okoli izbranega elementa.Sosedov je največ 8, najmanj 5.*
   - **ziga** `int prestejVrednost(int[][] a, int vrednost);`  - Koliko vrednosti 'vrednost' se nahaja v tabeli 'a'?
-  - **patrik** `bool obstajaVrednost(int[][] a, int vrednost);` - Ali v tabeli 'a' obstaja vsaj en element z vrednostjo 'vrednost'?
   - **trobec** `void napolniSosede(int[][] a, int indeksX, int indeksY, int vrednost);`   - Napolni vse sosede elementa (indeksX,indeksY) z vrednostjo 'vrednost'
   - **trobec** `void napolniSosede(int[][] a, int indeksX, int indeksY);`  - Napolni vse sosede elementa (indeksX,indeksY) z vrednostjo elementa (uporabi kar prejsnjo metodo)
   - **habjanic** `bool primerjajVrednost(int[][] a, int indeksX, int indeksY,int vrednost);`  - Preveri, če je vrednost danega elementa enaka 'vrednost'
@@ -48,7 +47,6 @@ Utility class with methods to operate on arrays (sized NxN)
   - *'Polnost' je v naslednji nalogi opredeljena kot: element dolžine N vsebuje vse vrednosti od 1..N. Začetna vrednost pri tabelah z elementi tipa char je 'a' oz 'A'. Metode so definirane zgolj za celoštevilske tipa in char.* 
   - **Nitazi** `boolean vrsticaPolna(int[][] a, int indV);` Ali vrstica s številko indV polna?
   - **emir1122** `boolean stolpecPoln(int[][] a, int indS);` Ali je stolpec indS poln?
-  - **Sustersic** `boolean diagLevaPolna(int[][] a);` Ali je leva diagonala tabele polna?
   - **Kosir** `boolean diagDesnaPolna(int[][] a);` Ali je desna diagonala polna?
   - **Weiss** `boolean kvadratNxNpoln(int[][] a, int indX, int indY, int n);` Ali je kvadrat z izhodiščem v (indX,indY) razsežnosti nXn poln ?
 
