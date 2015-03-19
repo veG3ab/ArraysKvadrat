@@ -771,4 +771,43 @@ public class ArraysKvadrat {
 
 		return b;
 	}
+	/*
+	*@stVrednosti steje vrednost
+	*/
+	
+	public static int prestejVrednost(int a[][], int vrednost){
+		int stVrednosti=0;
+		for(int s=0; s<a.length;s++){
+			for(int i=0; i<a(s).length;i++){
+				if(a[s][i]==vrednost){
+					stVrednosti++;
+				}
+			}
+		}
+	return stVrednosti;
+	}
+
+	public static long prestejVrednost(long a[][], logn vrednost){
+		long stVrednosti=0;
+		for(int s=0; s<a.length;s++){
+			for(int i=0; i<a(s).length;i++){
+				if(a[s][i]==vrednost){
+					stVrednosti++;
+				}
+			}
+		}
+	return stVrednosti;
+	}
+
+	public static char prestejVrednost(char a[][], char vrednost){
+		char stVrednosti=0;
+		for(int s=0; s<a.length;s++){
+			for(int i=0; i<a(s).length;i++){
+				if(a[s][i]==vrednost){
+					stVrednosti++;
+				}
+			}
+		}
+	return stVrednosti;
+	}
 }
