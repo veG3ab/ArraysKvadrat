@@ -816,4 +816,18 @@ public class ArraysKvadrat {
 
 		return b;
 	}
+	
+	static boolean diagLevaPolna(int [][]a){
+        int []stevila=new int [a.length];
+        for(int i=0,x=0,y=0;i<a.length;i++){
+            stevila[(a[i][i])-1]=1;
+        }
+        for(int i=0;i<a.length;i++){
+            if(stevila[i]!=1){
+                return false;}
+        }
+        return true;
+    }
+	
+	
 }
