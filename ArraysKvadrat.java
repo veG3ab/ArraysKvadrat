@@ -771,4 +771,45 @@ public class ArraysKvadrat {
 
 		return b;
 	}
+	
+	/**
+	*program steje koliko vrednosti je v tabeli
+	* @vrednost vrednost ki jo iščemo
+	* @stVrednosti kolikokrat je bila vrednost najdena
+	*/
+	public static int prestejVrednost(int a[][], int vrednost){
+		int stVrednosti=0;
+		for(int s=0; s<a.length;s++){
+			for(int i=0; i<a(s).length;i++){
+				if(a[s][i]==vrednost){
+					stVrednosti++;
+				}
+			}
+		}
+	return stVrednosti;
+	}
+
+	public static long prestejVrednost(long a[][], logn vrednost){
+		long stVrednosti=0;
+		for(int s=0; s<a.length;s++){
+			for(int i=0; i<a(s).length;i++){
+				if(a[s][i]==vrednost){
+					stVrednosti++;
+				}
+			}
+		}
+	return stVrednosti;
+	}
+
+	public static int prestejVrednost(char a[][], char vrednost){
+		int stVrednosti=0;
+		for(int s=0; s<a.length;s++){
+			for(int i=0; i<a(s).length;i++){
+				if(a[s][i]==vrednost){
+					stVrednosti++;
+				}
+			}
+		}
+		return stVrednosti;
+	}
 }
