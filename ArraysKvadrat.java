@@ -270,6 +270,7 @@ public class ArraysKvadrat {
             for(int j=0;j<a[i].length;j++){
                 if(vrednost==a[i][j]){
                     ali=true;
+                    return ali;
                 }
             }
         }
