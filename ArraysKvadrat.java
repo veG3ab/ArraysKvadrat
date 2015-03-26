@@ -263,46 +263,46 @@ public class ArraysKvadrat {
 	 * Pregleda tabelo 'a',če v njej obstaja element z vrednostjo 'vrednost'
 	 */
    
-    public static boolean obstajaVrednost(int [][] a, int vrednost){
-        for(int i=0;i<a.length;i++){
-            for(int j=0;j<a[i].length;j++){
-                if(vrednost==a[i][j]){
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
+	public static boolean obstajaVrednost(int [][] a, int vrednost){
+		for(int i=0;i<a.length;i++){
+			for(int j=0;j<a[i].length;j++){
+				if(vrednost==a[i][j]){
+					return true;
+				}
+			}
+		}
+		return false;
+	}
 	
 	/**
 	 * Pregleda tabelo 'a',če v njej obstaja element z vrednostjo 'vrednost'
 	 */
    
-    public static boolean obstajaVrednost(char [][] a, char vrednost){
-        for(int i=0;i<a.length;i++){
-            for(int j=0;j<a[i].length;j++){
-                if(vrednost==a[i][j]){
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
+	public static boolean obstajaVrednost(char [][] a, char vrednost){
+		for(int i=0;i<a.length;i++){
+			for(int j=0;j<a[i].length;j++){
+				if(vrednost==a[i][j]){
+					return true;
+				}
+			}
+		}
+		return false;
+	}
 		
 	/**
 	 * Pregleda tabelo 'a',če v njej obstaja element z vrednostjo 'vrednost'
 	 */
    
-    public static boolean obstajaVrednost(long [][] a, long vrednost){
-        for(int i=0;i<a.length;i++){
-            for(int j=0;j<a[i].length;j++){
-                if(vrednost==a[i][j]){
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
+	public static boolean obstajaVrednost(long [][] a, long vrednost){
+		for(int i=0;i<a.length;i++){
+			for(int j=0;j<a[i].length;j++){
+				if(vrednost==a[i][j]){
+					return true;
+				}
+			}
+		}
+		return false;
+	}
 	
 	/**
 	 * Vzame zgornji levi del podane tabele in jo ga shrani v novo tabelo podane
@@ -685,6 +685,7 @@ public class ArraysKvadrat {
 	/**
 	 * V podani tabeli opravi binarno iskanje po izbrani vrstici in vrne mesto
 	 * iskane vrednosti. Ce je vrednosti vec, vrne pozicijo prve
+	 * Pogoj za pravilo izvajanje je naraščujoče razvrščena vrstica
 	 * 
 	 * @param a
 	 *            podana tabela vrednosti
@@ -693,6 +694,7 @@ public class ArraysKvadrat {
 	 * @param v
 	 *            podana vrstica
 	 * @return mesto iskane vrednosti
+	 *			Ce iskane vrednsti v tabeli ni, funkcija vrne -1  
 	 */
 
 	public static int binarySearchVrstica(int[][] a, int v, int s) {
@@ -712,10 +714,12 @@ public class ArraysKvadrat {
 			}
 		}
 
-		// da je vrednost prva
-		while (kje > 0 && a[v][kje] == s)
-			kje--;
-		kje++;
+		if(kje>0) {
+			// da je vrednost prva
+			while (kje > 0 && a[v][kje] == s)
+				kje--;
+			kje++;
+		}
 
 		return kje;
 	}
@@ -723,6 +727,7 @@ public class ArraysKvadrat {
 	/**
 	 * V podani tabeli opravi binarno iskanje po izbranem stolpcu in vrne mesto
 	 * iskane vrednosti. Ce je vrednosti vec, vrne pozicijo prve
+	 * Pogoj za pravilo izvajanje je naraščujoče razvrščen stolpec
 	 * 
 	 * @param a
 	 *            podana tabela vrednosti
@@ -731,6 +736,7 @@ public class ArraysKvadrat {
 	 * @param st
 	 *            podan stolpec
 	 * @return mesto iskane vrednosti
+	 *			Ce iskane vrednsti v tabeli ni, funkcija vrne -1  
 	 */
 	public static int binarySearchStolpec(int[][] a, int st, int s) {
 		int sMeja = 0; // vkljucno
@@ -749,12 +755,40 @@ public class ArraysKvadrat {
 			}
 		}
 
-		// da je vrednost prva
-		while (kje > 0 && a[kje][st] == s)
-			kje--;
-		kje++;
+		if(kje>0) {
+			// da je vrednost prva
+			while (kje > 0 && a[kje][st] == s)
+				kje--;
+			kje++;
+		}
 
 		return kje;
+	}
+
+ 	/**
+	 * V podani tabeli opravi binarno iskanje po celotni tabeli
+	 * Ce je vrednosti vec, vrne pozicijo tiste, s najmajšima kordinatama
+	 * Pogoj za pravilo izvajanje je naraščujoče razvrščen stolpec
+	 * @param a podana tabela z vrednostmi
+	 * @param s iskana vrednost
+	 * @return stevilo, katerega modulos s dolzino vrstice predstavlja pozicjo iskane vrednosti v vrstici, 
+	 *			celostevilski kolicnik pri takem deljenu pa index vrstice, v kateri se ta vrednost nahaja. 
+	 *			Ce iskane vrednsti v tabeli ni, funkcija vrne -1  
+	 */
+	
+	public static int binarySearch(int [][]a, int s){
+		int kjeX = -1;
+		int kjeY = 0;
+
+		for(; kjeY<a.length && kjeX == -1; kjeY++){
+			kjeX = binarySearchVrstica(a, kjeY, s);
+			System.out.println(kjeX);
+		}
+
+		if(kjeX == -1)
+			return -1;
+
+		return kjeX + (kjeY-1)*a[0].length;
 	}
 
 	/**
@@ -824,21 +858,21 @@ public class ArraysKvadrat {
 	 */
 	
 	static boolean diagLevaPolna(int [][]a){
-        int []stevila=new int [a.length];
-        for(int i=0;i<a.length;i++){
-            if(a[i][i]<a.length && a[i][i]>0) {
+		int []stevila=new int [a.length];
+		for(int i=0;i<a.length;i++){
+			if(a[i][i]<a.length && a[i][i]>0) {
 				stevila[(a[i][i])-1]++;
 			}
 		}
-        
+		
 		for(int i=0;i<a.length;i++){
-            if(stevila[i]!=1){
-                return false;
+			if(stevila[i]!=1){
+				return false;
 			}
-        }
-        
+		}
+		
 		return true;
-    }
+	}
 	
 	/**
 	 * preveri, ali je leva diagonala dolzine N vsebuje vse vrednosti od 1..N
@@ -847,22 +881,22 @@ public class ArraysKvadrat {
 	 */
 	
 	static boolean diagLevaPolna(char [][]a){
-        int []crke=new int [a.length];
-        for(int i=0;i<a.length;i++){
-			int c = (int) (a[i][i].toUpperCase()) - 64;
+		int []crke=new int [a.length];
+		for(int i=0;i<a.length;i++){
+			int c = (int) (Character.toUpperCase(a[i][i])) - 64;
 			if(c<a.length && c>0) {
 				crke[c-1]++;
 			}
 		}
-        
+		
 		for(int i=0;i<a.length;i++){
-            if(crke[i]!=1){
-                return false;
+			if(crke[i]!=1){
+				return false;
 			}
-        }
-        
+		}
+		
 		return true;
-    }
+	}
 	
 	/**
 	 * preveri, ali je leva diagonala dolzine N vsebuje vse vrednosti od 1..N
@@ -871,20 +905,20 @@ public class ArraysKvadrat {
 	 */
 	
 	static boolean diagLevaPolna(long [][]a){
-        int []stevila=new int [a.length];
-        for(int i=0;i<a.length;i++){
-            if(a[i][i]<a.length && a[i][i]>0) {
-				stevila[(a[i][i])-1]++;
+		int []stevila=new int [a.length];
+		for(int i=0;i<a.length;i++){
+			if(a[i][i]<a.length && a[i][i]>0) {
+				stevila[(int)(a[i][i])-1]++;
 			}
 		}
-        
+		
 		for(int i=0;i<a.length;i++){
-            if(stevila[i]!=1){
-                return false;
+			if(stevila[i]!=1){
+				return false;
 			}
-        }
-        
+		}
+		
 		return true;
-    }
+	}
 	
 }
