@@ -178,6 +178,18 @@ public class ArraysKvadrat {
 		
 		return tn;
 	}
+	
+	public static void SortLine(int[][]t,int vrstica){
+        //Bubble sort
+        int N = t[vrstica].length;
+        for (int j=0;j<N-1;j++)
+            for (int i=0;i<N-1;i++)
+                if (t[vrstica][i+1] < t[vrstica][i] ){
+                    int tt=t[vrstica][i];
+                    t[vrstica][i] = t[vrstica][i+1];
+                    t[vrstica][i+1] = tt;
+                }
+    }
 }
 
 
