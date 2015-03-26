@@ -768,7 +768,7 @@ public class ArraysKvadrat {
 	/**
 	 * V podani tabeli opravi binarno iskanje po celotni tabeli
 	 * Ce je vrednosti vec, vrne pozicijo tiste, s najmajšima kordinatama
-	 * Pogoj za pravilo izvajanje je naraščujoče razvrščen stolpec
+	 * Pogoj za pravilo izvajanje so naraščujoče razvrščene vrstice
 	 * @param a podana tabela z vrednostmi
 	 * @param s iskana vrednost
 	 * @return stevilo, katerega modulos s dolzino vrstice predstavlja pozicjo iskane vrednosti v vrstici, 
@@ -921,6 +921,16 @@ public class ArraysKvadrat {
 		return true;
 	}
 
+	/**
+	 * Preisce celotno tabelo a in vrne stevilo, ki pove, kolikokrat
+	 * se je dolocena vrednost v tej tabeli pojavila
+	 * @param a 
+	 *			podana tabela vrednosti
+	 * @param vrednost 
+	 *			iskana vrednost
+	 * @return stevilo vrednosti
+	 */
+
 	public static int prestejVrednost(int a[][], int vrednost){
 		int stVrednosti=0;
 		for(int s=0; s<a.length;s++){
@@ -933,6 +943,16 @@ public class ArraysKvadrat {
 		return stVrednosti;
 	}
 	
+
+	/**
+	 * Preisce celotno tabelo a in vrne stevilo, ki pove, kolikokrat
+	 * se je dolocena vrednost v tej tabeli pojavila
+	 * @param a 
+	 *			podana tabela vrednosti
+	 * @param vrednost 
+	 *			iskana vrednost
+	 * @return stevilo vrednosti
+	 */
 	public static long prestejVrednost(long a[][], long vrednost){
 		long stVrednosti=0;
 		for(int s=0; s<a.length;s++){
@@ -945,6 +965,15 @@ public class ArraysKvadrat {
 		return stVrednosti;    	
 	}
 	
+	/**
+	 * Preisce celotno tabelo a in vrne stevilo, ki pove, kolikokrat
+	 * se je dolocena vrednost v tej tabeli pojavila
+	 * @param a 
+	 *			podana tabela vrednosti
+	 * @param vrednost 
+	 *			iskana vrednost
+	 * @return stevilo vrednosti
+	 */
 	public static char prestejVrednost(char a[][], char vrednost){
 		char stVrednosti=0;
 		for(int s=0; s<a.length;s++){
@@ -955,5 +984,44 @@ public class ArraysKvadrat {
 			}
 		}
 		return stVrednosti;
+	}
+
+	/**
+	 * Pove nam ali je vrednost enaka elementom iz tabele a
+	 * 
+	 * @param a je podana tabela
+	 * @param indeksX je vrstica v podani tabeli a
+	 * @param indeksY je stolpec v podani tabeli a
+	 * @param vrednost je podan element, ki ga primerjamo z podanim elementom tabele a
+	 * @return nam pove ali sta vrednost in elementi iz tabele enaka
+	 */
+	public static boolean primerjajVrednost(int[][] a, int indeksX, int indeksY,int vrednost) {
+		return vrednost == a [indeksX][indeksY]; 
+	}
+	
+	/**
+	 * Pove nam ali je vrednost enaka elementom iz tabele a
+	 * 
+	 * @param a je podana tabela
+	 * @param indeksX je vrstica v podani tabeli a
+	 * @param indeksY je stolpec v podani tabeli a
+	 * @param vrednost je podan element, ki ga primerjamo z podanim elementom tabele a
+	 * @return nam pove ali sta vrednost in elementi iz tabele enaka
+	 */
+	public static boolean primerjajVrednost(char[][] a, int indeksX, int indeksY,char vrednost) {
+		return vrednost == a [indeksX][indeksY]; 
+	}
+	
+	/**
+	 * Pove nam ali je vrednost enaka elementom iz tabele a
+	 * 
+	 * @param a je podana tabela
+	 * @param indeksX je vrstica v podani tabeli a
+	 * @param indeksY je stolpec v podani tabeli a
+	 * @param vrednost je podan element, ki ga primerjamo z podanim elementom tabele a
+	 * @return nam pove ali sta vrednost in elementi iz tabele enaka
+	 */
+	public static boolean primerjajVrednost(boolean[][] a, int indeksX, int indeksY,boolean vrednost) {
+		return vrednost == a [indeksX][indeksY]; 
 	}
 }
