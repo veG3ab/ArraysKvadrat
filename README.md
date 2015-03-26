@@ -24,15 +24,12 @@ Utility class with methods to operate on arrays (sized NxN)
 
 # Razdelitev nalog
 ## Osnovne
-  - **MaticML** - `sort(int [][]a, int z)` - sort izbrane vrstice z v tabeli a
-  - **Bobby** 	- `binarySearch(int [][]a, int s)` 	- na izbrani vrstici, na izbranem stolpcu, na celotni tabeli po posameznih vrsticah
-    
+  - **vse postorjeno**
+
 ## Potapljanje ladic
   - *Sosed elementa: so vsi elementi okoli izbranega elementa.Sosedov je največ 8, najmanj 5.*
-  - **ziga** `int prestejVrednost(int[][] a, int vrednost);`  - Koliko vrednosti 'vrednost' se nahaja v tabeli 'a'?
   - **trobec** `void napolniSosede(int[][] a, int indeksX, int indeksY, int vrednost);`   - Napolni vse sosede elementa (indeksX,indeksY) z vrednostjo 'vrednost'
   - **trobec** `void napolniSosede(int[][] a, int indeksX, int indeksY);`  - Napolni vse sosede elementa (indeksX,indeksY) z vrednostjo elementa (uporabi kar prejsnjo metodo)
-  - **habjanic** `bool primerjajVrednost(int[][] a, int indeksX, int indeksY,int vrednost);`  - Preveri, če je vrednost danega elementa enaka 'vrednost'
 
 ## Krizci in krozci
   - *Naloge predpostavljajo pojem praznosti; prazen= če je 0, znak s kodo 32(presledek), oz je vrednost, ki je manjša od |10-8|, odvisno od tipa elementov tabele*
@@ -52,7 +49,7 @@ Utility class with methods to operate on arrays (sized NxN)
 
 # Pripombe
   - `napolni20procNaklRazmejeno` deluje in je zanesliva (se ne more zaciklati), vendar je na velikih tabelah (50x50) pocasna. 
-  
+
 # Opombe
 
 Za nekatere dijake iz G3A je zmanjkalo nalog. Ti so Klemen, Lovro, Dominik in Rijavec. Od teh se pričakuje, da bodo kodo, ki jo bodo spisali zgoraj navedeni dijaki **poskušali** optimizirati in izboljšati.

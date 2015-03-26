@@ -116,7 +116,7 @@ public class ArraysKvadrat {
 	public static void print(int[][] ar) {
 		for (int x = 0; x < ar.length; x++) {
 			System.out.print("[");
-			for (int y = 0; y < ar.length; y++) {
+			for (int y = 0; y < ar[x].length; y++) {
 				System.out.printf("%2d ", ar[x][y]);
 			}
 			System.out.println("]");
@@ -130,7 +130,7 @@ public class ArraysKvadrat {
 	public static void print(char[][] ar) {
 		for (int x = 0; x < ar.length; x++) {
 			System.out.print("[");
-			for (int y = 0; y < ar.length; y++) {
+			for (int y = 0; y < ar[x].length; y++) {
 				System.out.printf("%c ", ar[x][y]);
 			}
 			System.out.println("]");
@@ -144,7 +144,7 @@ public class ArraysKvadrat {
 	public static void print(long[][] ar) {
 		for (int x = 0; x < ar.length; x++) {
 			System.out.print("[");
-			for (int y = 0; y < ar.length; y++) {
+			for (int y = 0; y < ar[x].length; y++) {
 				System.out.printf("%2d ", ar[x][y]);
 			}
 			System.out.println("]");
@@ -320,6 +320,75 @@ public class ArraysKvadrat {
 				tn[i][j] = t[i][j];
 
 		return tn;
+	}
+
+	/**
+	 * Narascujoce razvrsti vrstico v podani tabeli
+	 * @param t 
+	 *			tabela
+	 * @param vrstica
+	 * 			index sortirane vrstice
+	 */
+
+	public static void sortLine(int[][] t,int vrstica){
+		if(vrstica>=t.length || vrstica<0)
+			return;
+
+		//Bubble sort
+		int n = t[vrstica].length;
+		for (int j=0;j<n-1;j++)
+			for (int i=0;i<n-1-j;i++)
+				if (t[vrstica][i+1] < t[vrstica][i] ){
+					int tt=t[vrstica][i];
+					t[vrstica][i] = t[vrstica][i+1];
+					t[vrstica][i+1] = tt;
+				}
+	}
+
+	/**
+	 * Narascujoce razvrsti vrstico v podani tabeli
+	 * @param t 
+	 *			tabela
+	 * @param vrstica
+	 * 			index sortirane vrstice
+	 */
+
+	public static void sortLine(long[][] t,int vrstica){
+		if(vrstica>=t.length || vrstica<0)
+			return;
+
+		//Bubble sort
+		int n = t[vrstica].length;
+		for (int j=0;j<n-1;j++)
+			for (int i=0;i<n-1-j;i++)
+				if (t[vrstica][i+1] < t[vrstica][i] ){
+					long tt=t[vrstica][i];
+					t[vrstica][i] = t[vrstica][i+1];
+					t[vrstica][i+1] = tt;
+				}
+	}
+
+	/**
+	 * Narascujoce razvrsti vrstico v podani tabeli
+	 * @param t 
+	 *			tabela
+	 * @param vrstica
+	 * 			index sortirane vrstice
+	 */
+
+	public static void sortLine(char[][] t,int vrstica){
+		if(vrstica>=t.length || vrstica<0)
+			return;
+
+		//Bubble sort
+		int n = t[vrstica].length;
+		for (int j=0;j<n-1;j++)
+			for (int i=0;i<n-1-j;i++)
+				if (t[vrstica][i+1] < t[vrstica][i] ){
+					char tt=t[vrstica][i];
+					t[vrstica][i] = t[vrstica][i+1];
+					t[vrstica][i+1] = tt;
+				}
 	}
 
 	/**
