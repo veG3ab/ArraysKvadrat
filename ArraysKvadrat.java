@@ -886,5 +886,60 @@ public class ArraysKvadrat {
         
 		return true;
     }
+    
+    public class Neki 
+{
+    
+    /**
+     * Pove nam ali je vrednost enaka elementom iz tabele a
+     * 
+	 * @param a je podana tabela
+	 * @param indeksX je vrstica v podani tabeli a
+	 * @param indeksY je stolpec v podani tabeli a
+	 * @param vrednost je podan element, ki ga primerjamo z podanim elementom tabele a
+	 * @return nam pove ali sta vrednost in elementi iz tabele enaka
+	 */
+    public static boolean primerjajVrednost(int[][] a, int indeksX, int indeksY,int vrednost) 
+    {
+        if (vrednost == a [indeksX][indeksY]) 
+        {
+            return true;
+        }
+        else 
+        {
+            return false;
+        }
+    }
+    
+    /**
+	 * @param a podana tabela vrednosti
+	 * @param s iskana vrednost
+	 * @param s podan stolpec
+	 * @return mesto iskane vrednosti
+	 */
+    public static boolean primerjajVrednost(char[][] a, int indeksX, int indeksY,char vrednost) 
+    {
+        if (vrednost == a [indeksX][indeksY]) 
+        {
+            return true;
+        }  
+        else 
+        {
+            return false;
+        }
+    }
+    
+    public static boolean primerjajVrednost(boolean[][] a, int indeksX, int indeksY,boolean vrednost) 
+    {
+        if (vrednost == a [indeksX][indeksY])
+        {
+           return true; 
+        }  
+        else 
+        {
+            return false;
+        }
+    }
+}
 	
 }
