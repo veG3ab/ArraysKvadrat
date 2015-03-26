@@ -765,7 +765,7 @@ public class ArraysKvadrat {
 		return kje;
 	}
 
- 	/**
+	/**
 	 * V podani tabeli opravi binarno iskanje po celotni tabeli
 	 * Ce je vrednosti vec, vrne pozicijo tiste, s najmajšima kordinatama
 	 * Pogoj za pravilo izvajanje je naraščujoče razvrščen stolpec
@@ -920,5 +920,40 @@ public class ArraysKvadrat {
 		
 		return true;
 	}
+
+	public static int prestejVrednost(int a[][], int vrednost){
+		int stVrednosti=0;
+		for(int s=0; s<a.length;s++){
+			for(int i=0; i<a[s].length;i++){
+				if(a[s][i]==vrednost){
+					stVrednosti++;
+				}
+			}
+		}
+		return stVrednosti;
+	}
 	
+	public static long prestejVrednost(long a[][], long vrednost){
+		long stVrednosti=0;
+		for(int s=0; s<a.length;s++){
+			for(int i=0; i<a[s].length;i++){
+				if(a[s][i]==vrednost){
+					stVrednosti++;
+				}
+			}
+		}
+		return stVrednosti;    	
+	}
+	
+	public static char prestejVrednost(char a[][], char vrednost){
+		char stVrednosti=0;
+		for(int s=0; s<a.length;s++){
+			for(int i=0; i<a[s].length;i++){
+				if(a[s][i]==vrednost){
+					stVrednosti++;
+				}
+			}
+		}
+		return stVrednosti;
+	}
 }
