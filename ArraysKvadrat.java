@@ -1090,7 +1090,7 @@ public class ArraysKvadrat {
 	 * @param vrednost je podan element, ki ga primerjamo z podanim elementom tabele a
 	 * @return nam pove ali sta vrednost in elementi iz tabele enaka
 	 */
-	public static boolean primerjajVrednost(boolean[][] a, int indeksX, int indeksY,boolean vrednost) {
+	public static boolean primerjajVrednost(long[][] a, int indeksX, int indeksY,boolean vrednost) {
 		return vrednost == a [indeksX][indeksY]; 
 	}
 }
