@@ -1093,4 +1093,360 @@ public class ArraysKvadrat {
 	public static boolean primerjajVrednost(long[][] a, int indeksX, int indeksY,boolean vrednost) {
 		return vrednost == a [indeksX][indeksY]; 
 	}
+	
+	/**
+	 * Naprej sta dve nalogi od trobca, ki sta podani skupaj in razdeljeni tipih po int, char in long.
+	 * Če je podana tudi vrednost "int/long/char vrednost" se vpiše ta vrednost v sosednja polja, če ne, se napolnijo z 
+	 * istimi vrednostimi, kot je podana na izhodišču ([x][y]).
+	 */
+ //INT
+
+    public static void napolniSosede(int[][] a, int indeksX, int indeksY, int vrednost){
+        int X = indeksX;
+        int Y = indeksY;
+        
+        
+            indeksX = X;
+            indeksY = Y;
+            if(indeksY-- != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length) {
+                a [indeksX] [indeksY] = vrednost;
+
+            }
+            indeksX = X;
+            indeksY = Y;
+            if(indeksX-- != -1 && indeksY-- != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = vrednost;
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+            if(indeksX-- != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = vrednost;
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+            if(indeksX-- != -1 && indeksY++ != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = vrednost;
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+            if(indeksY++ != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = vrednost;
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+            if(indeksX++ != -1 && indeksY++ != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = vrednost;
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+            if(indeksX++ != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = vrednost;
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+            if(indeksX++ != -1 && indeksY-- != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = vrednost;
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+        }
+ 
+ public static void napolniSosede(int[][] a, int indeksX, int indeksY){
+        int X = indeksX;
+        int Y = indeksY;
+        
+
+        
+            indeksX = X;
+            indeksY = Y;
+            if(indeksY-- != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length) {
+                a [indeksX] [indeksY] = a [X] [Y];
+
+            }
+            indeksX = X;
+            indeksY = Y;
+            if(indeksX-- != -1 && indeksY-- != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = a [X] [Y];
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+            if(indeksX-- != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = a [X] [Y];
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+            if(indeksX-- != -1 && indeksY++ != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = a [X] [Y];
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+            if(indeksY++ != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = a [X] [Y];
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+            if(indeksX++ != -1 && indeksY++ != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = a [X] [Y];
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+            if(indeksX++ != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = a [X] [Y];
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+            if(indeksX++ != -1 && indeksY-- != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = a [X] [Y];
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+        }
+
+//LONG
+ 
+ public static void napolniSosede(long[][] a, int indeksX, int indeksY, long vrednost){
+        int X = indeksX;
+        int Y = indeksY;
+
+        
+            indeksX = X;
+            indeksY = Y;
+            if(indeksY-- != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length) {
+                a [indeksX] [indeksY] = vrednost;
+
+            }
+            indeksX = X;
+            indeksY = Y;
+            if(indeksX-- != -1 && indeksY-- != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = vrednost;
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+            if(indeksX-- != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = vrednost;
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+            if(indeksX-- != -1 && indeksY++ != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = vrednost;
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+            if(indeksY++ != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = vrednost;
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+            if(indeksX++ != -1 && indeksY++ != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = vrednost;
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+            if(indeksX++ != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = vrednost;
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+            if(indeksX++ != -1 && indeksY-- != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = vrednost;
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+        }	
+ 
+ public static void napolniSosede(long[][] a, int indeksX, int indeksY){
+        int X = indeksX;
+        int Y = indeksY;
+        
+
+        
+            indeksX = X;
+            indeksY = Y;
+            if(indeksY-- != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length) {
+                a [indeksX] [indeksY] = a [X] [Y];
+
+            }
+            indeksX = X;
+            indeksY = Y;
+            if(indeksX-- != -1 && indeksY-- != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = a [X] [Y];
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+            if(indeksX-- != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = a [X] [Y];
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+            if(indeksX-- != -1 && indeksY++ != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = a [X] [Y];
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+            if(indeksY++ != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = a [X] [Y];
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+            if(indeksX++ != -1 && indeksY++ != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = a [X] [Y];
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+            if(indeksX++ != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = a [X] [Y];
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+            if(indeksX++ != -1 && indeksY-- != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = a [X] [Y];
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+        }
+	
+	//CHAR
+ 
+ public static void napolniSosede(char[][] a, int indeksX, int indeksY, char vrednost){
+        int X = indeksX;
+        int Y = indeksY;
+        
+        
+            indeksX = X;
+            indeksY = Y;
+            if(indeksY-- != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length) {
+                a [indeksX] [indeksY] = vrednost;
+
+            }
+            indeksX = X;
+            indeksY = Y;
+            if(indeksX-- != -1 && indeksY-- != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = vrednost;
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+            if(indeksX-- != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = vrednost;
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+            if(indeksX-- != -1 && indeksY++ != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = vrednost;
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+            if(indeksY++ != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = vrednost;
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+            if(indeksX++ != -1 && indeksY++ != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = vrednost;
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+            if(indeksX++ != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = vrednost;
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+            if(indeksX++ != -1 && indeksY-- != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = vrednost;
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+        }
+ 
+public static void napolniSosede(char[][] a, int indeksX, int indeksY){
+        int X = indeksX;
+        int Y = indeksY;
+        
+
+        
+            indeksX = X;
+            indeksY = Y;
+            if(indeksY-- != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length) {
+                a [indeksX] [indeksY] = a [X] [Y];
+
+            }
+            indeksX = X;
+            indeksY = Y;
+            if(indeksX-- != -1 && indeksY-- != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = a [X] [Y];
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+            if(indeksX-- != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = a [X] [Y];
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+            if(indeksX-- != -1 && indeksY++ != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = a [X] [Y];
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+            if(indeksY++ != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = a [X] [Y];
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+            if(indeksX++ != -1 && indeksY++ != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = a [X] [Y];
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+            if(indeksX++ != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = a [X] [Y];
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+            if(indeksX++ != -1 && indeksY-- != -1 && indeksX >= 0 && indeksX <= a.length && indeksY  >= 0 && indeksY <= a.length){
+                a [indeksX] [indeksY] = a [X] [Y];
+
+            }
+            indeksX = X;
+            indeksY = Y; 
+        } 
 }
