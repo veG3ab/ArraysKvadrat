@@ -27,9 +27,7 @@ Utility class with methods to operate on arrays (sized NxN)
   - **vse postorjeno**
 
 ## Potapljanje ladic
-  - *Sosed elementa: so vsi elementi okoli izbranega elementa.Sosedov je največ 8, najmanj 5.*
-  - **trobec** `void napolniSosede(int[][] a, int indeksX, int indeksY, int vrednost);`   - Napolni vse sosede elementa (indeksX,indeksY) z vrednostjo 'vrednost'
-  - **trobec** `void napolniSosede(int[][] a, int indeksX, int indeksY);`  - Napolni vse sosede elementa (indeksX,indeksY) z vrednostjo elementa (uporabi kar prejsnjo metodo)
+  - **vse postorjeno**
 
 ## Krizci in krozci
   - *Naloge predpostavljajo pojem praznosti; prazen= če je 0, znak s kodo 32(presledek), oz je vrednost, ki je manjša od |10-8|, odvisno od tipa elementov tabele*
