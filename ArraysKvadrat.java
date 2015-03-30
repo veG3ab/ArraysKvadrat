@@ -1051,7 +1051,6 @@ public class ArraysKvadrat {
 		}
 		return stVrednosti;
 	}
-
 	
 	/**
 	 * Pove nam ali je vrednost enaka elementom iz tabele a
@@ -1494,22 +1493,22 @@ public class ArraysKvadrat {
 
 		return b;
 	}
-
+	
 	/**
-	 * Primerjava dveh stolpcev
-	 */
+     * Primerjava dveh stolpcev
+     */
 
-	public static boolean equalsStolpec(long[][] t1, int s1, long[][] t2, int s2) {
-		if (t1.length != t2.length)
-			return false;
+    public static boolean equalsStolpec(long[][] t1, int s1, long[][] t2, int s2) {
+        if (t1.length != t2.length)
+            return false;
 
-		boolean b = true;
-		for (int i = 0; i < t1.length && b; i++)
-			b = b && t1[i][s1] == t2[i][s2];
+        boolean b = true;
+        for (int i = 0; i < t1.length && b; i++)
+            b = b && t1[i][s1] == t2[i][s2];
 
-		return b;
-	}
-
+        return b;
+    }
+	
 	/**
 	 * preveri, ali je leva diagonala dolzine N vsebuje vse vrednosti od 1..N
 	 * @params a
@@ -1554,7 +1553,6 @@ public class ArraysKvadrat {
 		}
 		return stVrednosti;    	
 	}
-	
 	
 	/**
 	 * Pove nam ali je vrednost enaka elementom iz tabele a
