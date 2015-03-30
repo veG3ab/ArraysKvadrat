@@ -879,6 +879,16 @@ public class ArraysKvadrat {
 		return b;
 	}
 
+	public static boolean equalsStolpec(char[][] t1, int s1, char[][] t2, int s2) {
+        if (t1.length != t2.length)
+            return false;
+
+        boolean b = true;
+        for (int i = 0; i < t1.length && b; i++)
+            b = b && t1[i][s1] == t2[i][s2];
+
+        return b;
+    }
 	
 	/**
 	 * preveri, ali je leva diagonala dolzine N vsebuje vse vrednosti od 1..N
@@ -925,7 +935,35 @@ public class ArraysKvadrat {
 		}
 		return stVrednosti;
 	}
+	
+	
+	
+ 
+ /**
+     * V podani tabeli opravi binarno iskanje po celotni tabeli
+     * Ce je vrednosti vec, vrne pozicijo tiste, s najmajšima kordinatama
+     * Pogoj za pravilo izvajanje so naraščujoče razvrščene vrstice
+     * @param a podana tabela z vrednostmi
+     * @param s iskana vrednost
+     * @return stevilo, katerega modulos s dolzino vrstice predstavlja pozicjo iskane vrednosti v vrstici, 
+     *			celostevilski kolicnik pri takem deljenu pa index vrstice, v kateri se ta vrednost nahaja. 
+     *			Ce iskane vrednsti v tabeli ni, funkcija vrne -1  
+     */
 
+    public static int binarySearch(char [][]a, char s){
+        int kjeX = -1;
+        int kjeY = 0;
+
+        for(; kjeY<a.length && kjeX == -1; kjeY++){
+            kjeX = binarySearchVrstica(a, kjeY, s);
+            System.out.println(kjeX);
+        }
+
+        if(kjeX == -1)
+            return -1;
+
+        return kjeX + (kjeY-1)*a[0].length;
+    }
 	
 	/**
 	 * Pove nam ali je vrednost enaka elementom iz tabele a
@@ -996,6 +1034,7 @@ public class ArraysKvadrat {
             indeksX = X;
             indeksY = Y; 
         }
+ 
  
  //Isto le da ni podane vrednosti. Uporabi se vrednost iz mesta okoli katerega polnimo.
  
@@ -1298,7 +1337,21 @@ public static void napolniSosede(char[][] a, int indeksX, int indeksY){
 
 		return b;
 	}
+	
+	/**
+     * Primerjava dveh stolpcev
+     */
 
+    public static boolean equalsStolpec(long[][] t1, int s1, long[][] t2, int s2) {
+        if (t1.length != t2.length)
+            return false;
+
+        boolean b = true;
+        for (int i = 0; i < t1.length && b; i++)
+            b = b && t1[i][s1] == t2[i][s2];
+
+        return b;
+    }
 	
 	/**
 	 * preveri, ali je leva diagonala dolzine N vsebuje vse vrednosti od 1..N
@@ -1345,6 +1398,31 @@ public static void napolniSosede(char[][] a, int indeksX, int indeksY){
 		return stVrednosti;    	
 	}
 	
+	/**
+     * V podani tabeli opravi binarno iskanje po celotni tabeli
+     * Ce je vrednosti vec, vrne pozicijo tiste, s najmajšima kordinatama
+     * Pogoj za pravilo izvajanje so naraščujoče razvrščene vrstice
+     * @param a podana tabela z vrednostmi
+     * @param s iskana vrednost
+     * @return stevilo, katerega modulos s dolzino vrstice predstavlja pozicjo iskane vrednosti v vrstici, 
+     *			celostevilski kolicnik pri takem deljenu pa index vrstice, v kateri se ta vrednost nahaja. 
+     *			Ce iskane vrednsti v tabeli ni, funkcija vrne -1  
+     */
+
+    public static int binarySearch(long [][]a, long s){
+        int kjeX = -1;
+        int kjeY = 0;
+
+        for(; kjeY<a.length && kjeX == -1; kjeY++){
+            kjeX = binarySearchVrstica(a, kjeY, s);
+            System.out.println(kjeX);
+        }
+
+        if(kjeX == -1)
+            return -1;
+
+        return kjeX + (kjeY-1)*a[0].length;
+    }
 	
 	/**
 	 * Pove nam ali je vrednost enaka elementom iz tabele a
