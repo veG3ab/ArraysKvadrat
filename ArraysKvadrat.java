@@ -246,13 +246,19 @@ public class ArraysKvadrat {
 
 		//Bubble sort
 		int n = t[vrstica].length;
-		for (int j=0;j<n-1;j++)
+		boolean done=false;
+
+		for (int j=0;j<n-1 && done==false;j++) {
+			done=true;
 			for (int i=0;i<n-1-j;i++)
 				if (t[vrstica][i+1] < t[vrstica][i] ){
 					int tt=t[vrstica][i];
 					t[vrstica][i] = t[vrstica][i+1];
 					t[vrstica][i+1] = tt;
+					done=false;
 				}
+
+		}
 	}
 
 	/**
@@ -724,13 +730,18 @@ public class ArraysKvadrat {
 
 		//Bubble sort
 		int n = t[vrstica].length;
-		for (int j=0;j<n-1;j++)
+		boolean done=false;
+
+		for (int j=0;j<n-1 && done==false;j++) {
+			done=true;
 			for (int i=0;i<n-1-j;i++)
 				if (t[vrstica][i+1] < t[vrstica][i] ){
 					char tt=t[vrstica][i];
 					t[vrstica][i] = t[vrstica][i+1];
 					t[vrstica][i+1] = tt;
+					done=false;
 				}
+		}
 	}
 
 	
@@ -1232,13 +1243,18 @@ public class ArraysKvadrat {
 
 		//Bubble sort
 		int n = t[vrstica].length;
-		for (int j=0;j<n-1;j++)
+		boolean done=false;
+
+		for (int j=0;j<n-1 && done==false;j++) {
+			done=true;
 			for (int i=0;i<n-1-j;i++)
 				if (t[vrstica][i+1] < t[vrstica][i] ){
 					long tt=t[vrstica][i];
 					t[vrstica][i] = t[vrstica][i+1];
 					t[vrstica][i+1] = tt;
+					done=false;
 				}
+		}
 	}
 
 	
