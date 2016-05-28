@@ -1,4 +1,4 @@
-**Pull request bo sprejet samo, če bo koda pred oddajo pregledana, stestirana in prevedena.**
+**Pull request (PR) bo sprejet samo, če bo koda pred oddajo pregledana, stestirana in prevedena.**
 
 ArraysKvadrat
 =============
