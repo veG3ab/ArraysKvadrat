@@ -4,7 +4,7 @@
  * utility class za 'kvadratne' dvorazsežne tabele
  * 
  * @author G3ab
- * @version 0.1/201415
+ * @version 1.0/201415
  */
 
 import java.util.Arrays;
